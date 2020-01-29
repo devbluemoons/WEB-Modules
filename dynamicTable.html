@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic Table</title>
+</head>
+<body>
+	<h1>Dynamic Table</h1>
+	<hr>
+	<div>
+		<select id="selectBox"></select>
+	</div>
+	<hr>
+	<div id="dynamicTable"></div>
+</body>
+<style type="text/css">
+	html, body {
+		margin: 0;
+		padding: 0;
+	}
+	h1 {
+		text-align: center;
+	}
+	#selectBox {
+		display: flex;
+		justify-content: center;
+	}
+	#dynamicTable {
+		display: flex;
+		justify-content: center;
+		height: 100vh;
+		width: 100%;
+		background: lightgray;
+	}
+	table, tr, th, td {
+		border: 1px solid black;
+		padding: 15px;
+	}
+	table {
+		width: 100%;
+	}
+	tr th {
+		background: lightblue;
+	}
+	tr td {
+		background: white;
+	}
+</style>
+<script type="text/javascript">
+
+	const data001 = [
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee"},
+	];
+	const data002 = [
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg"},
+	];
+	const data003 = [
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+		{"aaa":"aaa", "bbb":"bbb", "ccc":"ccc", "ddd":"ddd", "eee":"eee", "fff":"fff", "ggg":"ggg", "hhh":"hhh", "iii":"iii", "jjj":"jjj"},
+	];
+	const dataArr = [data001, data002, data003];
+
+	const selectBox = document.getElementById("selectBox");
+	const dynamicTable = document.getElementById("dynamicTable");
+
+
+	createSelectBox = () => {
+		for (let i = 0; i < dataArr.length; i++) {
+			let option = document.createElement("option");
+			option.value = i;
+			option.text = `option 00${i+1}`;
+			selectBox.append(option);
+		}
+	}
+	createDynamicTable = (index) => {
+		
+		dynamicTable.innerHTML = "";
+		const table = document.createElement("table");
+
+		// make column list
+		const tr = document.createElement("tr");
+		let data = dataArr[index];
+		let columns = Object.keys(data[0]);
+
+		columns.forEach(item => {
+			const th = document.createElement("th");
+			th.innerHTML = item;
+			tr.append(th);
+			// tr.width = `${Math.round(100 /columns.length)}%`;
+			console.log(tr.width);
+		});
+		table.append(tr);
+
+		// make row data
+		data.forEach(item => {
+			const tr = document.createElement("tr");
+			const itemArr = Object.entries(item);
+			
+			itemArr.forEach(([key,value]) => {
+				const td = document.createElement("td");
+				td.innerHTML = value;
+				tr.append(td);
+			});
+			table.append(tr);
+		})
+		dynamicTable.append(table);
+	}
+
+	changeSelectedOption = () => {
+		selectBox.addEventListener("change", (event) => {
+			createDynamicTable(event.target.value);
+		});
+	}
+	initialize = () => {
+		createSelectBox();
+		createDynamicTable(0);
+		changeSelectedOption();
+	}
+
+	initialize();
+</script>
+</html>
