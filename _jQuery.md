@@ -30,8 +30,8 @@ $.ajax({
 });
 ```
   
-###### insert part of html
+###### insert [part of] html
 ```js
 $("#id-name").load("path/path/ selector")
-/* $("#table").load("test/dynamicTable/ #dynamicTable") */
+/* ex) $("#table").load("test/dynamicTable/ #dynamicTable") */
 ```
