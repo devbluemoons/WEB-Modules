@@ -6,7 +6,6 @@
 ```js
 $("#id-name").serialrize();
 $("#id-name").serialrizeArray();
-$("#id-name").serialrizeObject();
 ```
   
 ###### ajax
