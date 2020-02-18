@@ -13,6 +13,7 @@ $("#id-name").serialrizeArray();
 $.ajax({
     type: 'get',
     dataType: 'json',
+    /* contentType 은 특별히 요구되는 조건이 없다면 제외시키는 것이 좋다 */
     contentType: 'application/json; charset=utf-8',
     data: $("#searchForm").serializeArray(),
     url: "/test/findAllTestDev",
