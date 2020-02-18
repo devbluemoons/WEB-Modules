@@ -35,3 +35,8 @@ $.ajax({
 $("#id-name").load("path/path/ selector")
 /* ex) $("#table").load("test/dynamicTable/ #dynamicTable") */
 ```
+  
+###### off() & on()
+```js
+$(this).off("click").on("click", function(){});
+```
