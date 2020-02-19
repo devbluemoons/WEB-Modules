@@ -40,3 +40,14 @@ $("#id-name").load("path/path/ selector")
 ```js
 $(this).off("click").on("click", function(){});
 ```
+  
+###### get cell value from table on javaScript
+```js
+const trs = document.getElementsByTagName("tr");
+		
+for(let i=0; i<trs.length; i++){
+  trs[i].onclick = function(){
+    console.log(trs[i].getElementsByTagName("input")[0].value);
+  }
+}
+```
