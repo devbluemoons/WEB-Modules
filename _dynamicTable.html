@@ -128,10 +128,30 @@
 			createDynamicTable(event.target.value);
 		});
 	}
+	
+	getTagInfo = () => {
+		const target = document.getElementsByTagName("tr");
+		console.log(target);
+	        
+		for (let i = 0; i < target.length; i++) {
+			target[i].onclick = function() {
+		        removeAllClass();
+			target[i].classList.add("active");
+		};
+	}
+
+	removeAllClass = () => {
+      		for (let i = 0; i < target.length; i++) {
+          	target[i].classList.remove("active");
+        }
+      };
+    };
+	
 	initialize = () => {
 		createSelectBox();
 		createDynamicTable(0);
 		changeSelectedOption();
+		getTagInfo();
 	}
 
 	initialize();
