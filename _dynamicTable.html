@@ -41,6 +41,12 @@
 	tr th {
 		background: lightblue;
 	}
+	tr:hover td {
+      		background: lightyellow;
+    	}
+    	tr.active td {
+      		background: lightgoldenrodyellow;
+    	}
 	tr td {
 		background: white;
 	}
@@ -135,17 +141,17 @@
 	        
 		for (let i = 0; i < target.length; i++) {
 			target[i].onclick = function() {
-		        removeAllClass();
-			target[i].classList.add("active");
-		};
-	}
+		        	removeAllClass();
+				target[i].classList.add("active");
+			};
+		}
 
-	removeAllClass = () => {
-      		for (let i = 0; i < target.length; i++) {
-          	target[i].classList.remove("active");
-        }
-      };
-    };
+		removeAllClass = () => {
+      			for (let i = 0; i < target.length; i++) {
+          			target[i].classList.remove("active");
+        		}
+      		};
+    	};
 	
 	initialize = () => {
 		createSelectBox();
