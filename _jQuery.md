@@ -38,7 +38,9 @@ $("#id-name").load("path/path/ selector")
   
 ###### off() & on()
 ```js
-$(this).off("click").on("click", function(){});
+$(this).off("click").on("click", function(){
+    const value = $(this).children("td").children(":hidden").val();
+});
 ```
   
 ###### get cell value from table on javaScript
