@@ -1,68 +1,79 @@
 #### data and time utilities
 ```js
-
-/*getFullYear*/
-function getYear(){
-	return new Date().getFullYear();
-}
-
-/*getMonth*/
-function getMonth(){
-	const date = new Date();
-	return parseInt(date.getMonth()) < 10 ? `0${date.getMonth()}` : date.getMonth();
-}
-
-/*getDate*/
-function getDay(){
-	const date = new Date();
-	return parseInt(date.getDay()) < 10 ? `0${date.getDay()}` : date.getDay();
-}
-
-/*getHours*/
-function getHours(){
-	const date = new Date();
-	return parseInt(date.getHours()) < 10 ? `0${date.getHours()}` : date.getHours();
-}
-
-/*getMinutes*/
-function getMinutes(){
-	const date = new Date();
-	return parseInt(date.getMinutes()) < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-}
-
-/*getSeconds*/
-function getSeconds(){
-	const date = new Date();
-	return parseInt(date.getSeconds()) < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-}
-
-
-/*getYYYYMMDD*/
-function yyyyMMdd() {
-	const date = new Date();
+//date class
+class dateSingleTon{
 	
-	const yyyy = date.getFullYear();
-	const mm = parseInt(date.getMonth()) < 10 ? `0${date.getMonth()}` : date.getMonth();
-	const dd = parseInt(date.getDay()) < 10 ? `0${date.getDay()}` : date.getDay();
+	constructor() {
+		this.date = new Date();
+	}
+	
+	instance() {
+		return {
+			year: this.date.getFullYear(),
+			month: this.date.getMonth(),
+			day: this.date.getDay(),
+			hours: this.date.getHours(),
+			minutes: this.date.getMinutes(),
+			seconds: this.date.getSeconds()
+		}
+	}
+}
+
+const date = new dateSingleTon().instance();
+
+//getFullYear
+function getYear(){
+	return date.year;
+}
+
+//getMonth
+function getMonth(){
+	return parseInt(date.month) < 10 ? `0${date.month}` : date.month;
+}
+
+//getDay
+function getDay(){
+	return parseInt(date.day) < 10 ? `0${date.day}` : date.day;
+}
+
+//getHours
+function getHours(){
+	return parseInt(date.hours) < 10 ? `0${date.hours}` : date.hours;
+}
+
+//getMinutes
+function getMinutes(){
+	return parseInt(date.minutes) < 10 ? `0${date.minutes}` : date.minutes;
+}
+
+//getSeconds
+function getSeconds(){
+	return parseInt(date.seconds) < 10 ? `0${date.seconds}` : date.seconds;
+}
+
+
+//getYYYYMMDD
+function yyyyMMdd() {
+	
+	const yyyy = date.year();
+	const mm = parseInt(date.month) < 10 ? `0${date.month}` : date.month;
+	const dd = parseInt(date.day) < 10 ? `0${date.day}` : date.day;
 	
 	return `${yyyy}-${mm}-${dd}`;
 }
 
-/*getHHMMSS*/
+//getHHMMSS
 function hhMMss() {
-	const date = new Date();
 	
-	const hh = parseInt(date.getHours()) < 10 ? `0${date.getHours()}` : date.getHours();
-	const mm = parseInt(date.getMinutes()) < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-	const ss = parseInt(date.getSeconds()) < 10 ? `0${date.getSeconds()}` : date.getSeconds();
+	const hh = parseInt(date.hours) < 10 ? `0${date.hours}` : date.hours;
+	const mm = parseInt(date.minutes) < 10 ? `0${date.minutes}` : date.minutes;
+	const ss = parseInt(date.seconds) < 10 ? `0${date.seconds}` : date.seconds;
 	
 	return `${hh}:${mm}:${ss}`;
 }
 
-/*getCurrentTime*/
+//getCurrentTime
 function getCurrentTime() {
 	return `${yyyyMMdd()} ${hhMMss()}`;
 }
-
-
 ```
