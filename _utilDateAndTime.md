@@ -1,7 +1,7 @@
 #### data and time utilities
 ```js
 //date class
-class dateSingleTon{
+class currentDate{
 	
 	constructor() {
 		this.date = new Date();
@@ -19,7 +19,7 @@ class dateSingleTon{
 	}
 }
 
-const date = new dateSingleTon().instance();
+const date = new currentDate().instance();
 
 //getFullYear
 function getYear(){
