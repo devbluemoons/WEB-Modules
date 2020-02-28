@@ -19,7 +19,7 @@ import * as [class-name] from @/js-file-name;
 //example
 import * as date from @/utilDateAndTime;
 
-export function[function-name](){} / const [variable-name]
+export function[function-name](){} /* or */ const [variable-name]
 //example
 export function currentTime(){}
 export const date = (...);
