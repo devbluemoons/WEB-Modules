@@ -9,10 +9,10 @@ class currentDate{
 	
 	instance() {
 		return {
-			year: this.date.getFullYear(),
-			month: this.date.getMonth(),
-			day: this.date.getDay(),
-			hours: this.date.getHours(),
+			year   : this.date.getFullYear(),
+			month  : this.date.getMonth(),
+			day    : this.date.getDay(),
+			hours  : this.date.getHours(),
 			minutes: this.date.getMinutes(),
 			seconds: this.date.getSeconds()
 		}
