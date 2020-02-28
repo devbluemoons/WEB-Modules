@@ -10,3 +10,25 @@
   
 ###### ref.
 https://poiemaweb.com/es6-block-scope
+  
+---
+  
+###### import, export
+```js
+import * as [class-name] from @/js-file-name;
+//example
+import * as date from @/utilDateAndTime;
+
+export function[function-name](){} / const [variable-name]
+//example
+export function currentTime(){}
+export const date = (...);
+export let abc = (...)
+```
+  
+###### check variable
+```js
+typeof [variable-name] !== "undefined"
+//example
+if(typeof rowData !== "undefined"){}
+```
