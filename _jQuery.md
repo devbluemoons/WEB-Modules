@@ -13,6 +13,7 @@ $("#id-name").serialrizeArray();
 $.ajax({
     type: 'get',
     dataType: 'json',
+    async: false, // 이 부분을 적용해줘야 데이터를 변수에 담지 않고도 넘길 수 있다
     /* contentType 은 특별히 요구되는 조건이 없다면 제외시키는 것이 좋다 */
     /* contentType: 'application/json; charset=utf-8', */
     data: $("#searchForm").serializeArray(),
@@ -22,7 +23,7 @@ $.ajax({
         //
     }
 }).done(response => {
-    //
+    myTest(response);
 }).fail(error => {
     //
 }).always(response => {
