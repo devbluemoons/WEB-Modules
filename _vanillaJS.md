@@ -30,3 +30,6 @@ function selectedOption(event)(e){
 	console.log(e.target.value);
 }
 ```
+  
+###### hide bootstrap modal 
+https://stackoverflow.com/questions/46577690/hide-bootstrap-modal-using-pure-javascript-on-click/52570205
