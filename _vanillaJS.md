@@ -1,4 +1,4 @@
-// only one checked in input type checkbox
+###### only one checked in input type checkbox
 ```js
 function onlyOneChecked(node){
 	
@@ -9,5 +9,20 @@ function onlyOneChecked(node){
 	});
 	
 	node.checked = status;
+}
+```
+  
+###### get selected option value from select tag
+```html
+<select class="seltype01" onchange="selectedOption(event)">
+	<option value="1">JavaScript</option>
+	<option value="2">NodeJS</option>
+	<option value="3">MongoDB</option>
+</select>
+```
+  
+```js
+function selectedOption(event)(e){
+	console.log(e.target.value);
 }
 ```
