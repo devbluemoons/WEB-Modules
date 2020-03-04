@@ -1,4 +1,8 @@
 ###### only one checked in input type checkbox
+```html
+<input type="checkbox" value="01" onclick="onlyOneChecked(this)">
+```
+
 ```js
 function onlyOneChecked(node){
 	
@@ -15,9 +19,9 @@ function onlyOneChecked(node){
 ###### get selected option value from select tag
 ```html
 <select class="seltype01" onchange="selectedOption(event)">
-	<option value="1">JavaScript</option>
-	<option value="2">NodeJS</option>
-	<option value="3">MongoDB</option>
+	<option value="01">JavaScript</option>
+	<option value="02">NodeJS</option>
+	<option value="03">MongoDB</option>
 </select>
 ```
   
