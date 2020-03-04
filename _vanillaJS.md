@@ -1,18 +1,18 @@
 ###### only one checked in input type checkbox
 ```html
-<input type="checkbox" value="01" onclick="onlyOneChecked(this)">
+<input type="checkbox" value="01" onclick="onlyOneChecked(event)">
 ```
 
 ```js
-function onlyOneChecked(node){
+function onlyOneChecked(e){
 	
-	const status = node.checked;
+	const status = e.target.checked;
 	
 	document.querySelectorAll("input[type=checkbox]:checked").forEach(item => {
 		item.checked = false;
 	});
 	
-	node.checked = status;
+	e.target.checked = status;
 }
 ```
   
