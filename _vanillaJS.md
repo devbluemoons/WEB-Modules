@@ -151,6 +151,7 @@ function bindingModal() {
 	// 6) 두번째 parameter를 callback 함수 형태로 정의
 	// 7) 세번째 parameter로 {once:true} 를 object 형태로 적용
 	// 8) 세번째 parameter로 인하여 EventListener는 한번만 실행된다
+	
 	function closeModal() {
 		modal.classList.add("fadeOut");
 		modal.addEventListener("animationend", () => {
