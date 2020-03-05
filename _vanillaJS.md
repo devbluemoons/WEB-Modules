@@ -52,14 +52,9 @@ function selectedOption(event)(e){
 ```css
 .modal {
 	display: none;
-	opacity: 0;
-	transition: opacity: 500ms; 
 }
 
 .modal.is-visible {
-	display: block;
-	opacity: 1;
-	
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -76,54 +71,54 @@ function selectedOption(event)(e){
 	position: absolute;
 }
 .b-close {
-	position:absolute;
-	top:15px; 
-	right:15px; 
-	width:21px; 
-	height:21px;  
-	cursor:pointer;
-	text-indent:100000em;  
-	background:url(../images/common/icon_close.gif) no-repeat;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 21px;
+	height: 21px;
+	cursor: pointer;
+	text-indent: 100000em;
+	background: url(../images/common/icon_close.gif) no-repeat;
 }
 .modal_content {
 	background: white;
-	padding:0; 
+	padding:0;
 	position: absolute;
 	width:900px;
-	height:600px; 
+	height:600px;
 	border:1px solid #cccccc;
-	margin:0;  
-	padding:25px; 
-	z-index:500; 
+	margin:0;
+	padding:25px;
+	z-index:500;
 }
 
 /** fade effect **/
-@-webkit-keyframes fadein {
+@-webkit-keyframes fade-in {
 	0%   {opacity: 0;}
 	100% {opacity: 1;}
 }
-@keyframes fadein {
+@keyframes fade-in {
 	0%   {opacity: 0;}
 	100% {opacity: 1;}
 }
-.fadeIn {
-	-moz-animation   : fadein 0.5s linear;
-	-webkit-animation: fadein 0.5s linear;
-	animation        : fadein 0.5s linear;
+.fade-in {
+	-moz-animation   : fade-in 0.5s linear;
+	-webkit-animation: fade-in 0.5s linear;
+	animation        : fade-in 0.5s linear;
 }
 
-@-webkit-keyframes fadeout {
+@-webkit-keyframes fade-out {
 	0%   {opacity: 1;}
 	100% {opacity: 0;}
 }
-@keyframes fadeout {
+@keyframes fade-out {
 	0%   {opacity: 1;}
 	100% {opacity: 0;}
 }
-.fadeOut {
-	-moz-animation     : fadeout 0.5s linear;
-	-webkit-animation  : fadeout 0.5s linear;
-	animation          : fadeout 0.5s linear;
+.fade-out {
+	-moz-animation   : fade-out 0.5s linear;
+	-webkit-animation: fade-out 0.5s linear;
+	animation        : fade-out 0.5s linear;
 }
 ```
   
@@ -137,8 +132,8 @@ function bindingModal() {
 	const b_close = document.querySelector(".b-close");
 	
 	function openModal() {
-		modal.classList.remove("fadeOut");
-		modal.classList.add("is-visible", "fadeIn");
+		modal.classList.remove("fade-out");
+		modal.classList.add("is-visible", "fade-in");
 	}
 	
 	// !!! 이 부분은 순서가 중요
@@ -153,9 +148,9 @@ function bindingModal() {
 	// 8) 세번째 parameter로 인하여 EventListener는 한번만 실행된다
 	
 	function closeModal() {
-		modal.classList.add("fadeOut");
+		modal.classList.add("fade-out");
 		modal.addEventListener("animationend", () => {
-			modal.classList.remove("is-visible","fadeIn");
+			modal.classList.remove("is-visible","fade-in");
 		}, {once: true});
 	}
 	
