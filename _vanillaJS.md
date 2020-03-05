@@ -136,10 +136,15 @@ function bindingModal() {
 	const b_close = document.querySelector(".b-close");
 	
 	const openModal = () => {
-		modal.classList.remove("hidden");
+		modal.classList.remove("fadeOut");
+		modal.classList.add("is-visible", "fadeIn");
 	}
 	const closeModal = () => {
-		modal.classList.add("hidden");
+		modal.classList.add("fadeOut");
+		
+		setTimeout(() => {
+			modal.classList.remove("is-visible","fadeIn");
+		}, 500);
 	}
 	
 	openBtn.addEventListener("click", openModal);
