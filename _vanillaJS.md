@@ -18,7 +18,7 @@ function onlyOneChecked(e){
   
 ###### get selected option value from select tag
 ```html
-<select class="seltype01" onchange="selectedOption(event)">
+<select onchange="selectedOption(event)">
 	<option value="01">JavaScript</option>
 	<option value="02">NodeJS</option>
 	<option value="03">MongoDB</option>
@@ -33,7 +33,7 @@ function selectedOption(event)(e){
   
 ###### modal control 
 ```html
-<div class="modal hidden">
+<div class="modal">
 	<div class="modal_overlay"></div>
 	<div class="modal_content">
 		<div class="b-close">X</div>
