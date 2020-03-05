@@ -99,8 +99,8 @@ function selectedOption(event)(e){
 
 /** fade effect **/
 @-webkit-keyframes fadein {
-	0% {opacity:0;}
-	100% {opacity:1;}
+	0%   {opacity: 0;}
+	100% {opacity: 1;}
 }
 @keyframes fadein {
 	0%   {opacity: 0;}
@@ -124,7 +124,6 @@ function selectedOption(event)(e){
 	-moz-animation     : fadeout 0.5s linear;
 	-webkit-animation  : fadeout 0.5s linear;
 	animation          : fadeout 0.5s linear;
-	animation-fill-mode: forwards;
 }
 ```
   
