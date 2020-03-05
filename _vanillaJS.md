@@ -111,7 +111,7 @@ function bindingModal() {
 	b_close.addEventListener("click", closeModal);
 	overlay.addEventListener("click", closeModal);
 	
-	/*escape*/
+	/* escape */
 	document.addEventListener("keydown", e => {
 		e.keyCode === 27 ? closeModal() : null;
 	});
