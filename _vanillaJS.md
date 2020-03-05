@@ -142,8 +142,11 @@ function bindingModal() {
 		modal.classList.add("is-visible", "fadeIn");
 	}
 	const closeModal = () => {
+		// !!! 이 부분은 순서가 중요
+		// 1) 먼저 fadeOut을 통해 클래스 애니메이션 효과를 적용
 		modal.classList.add("fadeOut");
-		
+		// 2) 절대 fadeOut 코드와 같이 적용해서는 안된다 / 논리적인 오류 발생
+		// 3) fadeOut 클래스의 애니메이션 적용 시간을 확인하여 setTimeOut 시간을 동일하게 적용해야 한다
 		setTimeout(() => {
 			modal.classList.remove("is-visible","fadeIn");
 		}, 500);
