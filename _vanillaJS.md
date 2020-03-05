@@ -49,6 +49,15 @@ function selectedOption(event)(e){
   
 ```css
 .modal {
+	display: none;
+	opacity: 0;
+	transition: opacity: 500ms; 
+}
+
+.modal.is-visible {
+	display: block;
+	opacity: 1;
+	
 	position: fixed;
 	top: 0;
 	left: 0;
