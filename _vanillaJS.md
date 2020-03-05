@@ -144,10 +144,13 @@ function bindingModal() {
 	// !!! 이 부분은 순서가 중요
 	// 1) 먼저 fadeOut을 통해 클래스 애니메이션 효과를 적용
 	// 2) 절대 fadeOut 코드와 같이 적용해서는 안된다 / 논리적인 오류 발생
-	// 3) animation 효과가 적용된 element에 EventListener를 적용
+	// 3) animation 효과가 적용된 element에 EventListener를 추가
 	// 4) animationend 속성은 element의 animation 적용 시간이 끝나는 시점을 반환
-	// 5) EventListener의 첫번째 인자로 animationend 속성을 적용
-	// 6) 두번째 인자로 적용할 인자를 callback 함수 형태로 정의
+	// 5) EventListener의 첫번째 parameter로 animationend 속성을 적용
+	// 5) 두번째 parameter는 첫번째 parameter가 리턴되는 시점부터 함수를 실행
+	// 6) 두번째 parameter를 callback 함수 형태로 정의
+	// 7) 세번째 parameter로 {once:true} 를 object 형태로 적용
+	// 8) 세번째 parameter로 인하여 EventListener는 한번만 실행된다
 	function closeModal() {
 		modal.classList.add("fadeOut");
 		modal.addEventListener("animationend", () => {
