@@ -136,19 +136,23 @@ function bindingModal() {
 	const closeBtn = document.getElementById("closePopup");
 	const b_close = document.querySelector(".b-close");
 	
-	const openModal = () => {
+	function openModal() {
 		modal.classList.remove("fadeOut");
 		modal.classList.add("is-visible", "fadeIn");
 	}
-	const closeModal = () => {
-		// !!! 이 부분은 순서가 중요
-		// 1) 먼저 fadeOut을 통해 클래스 애니메이션 효과를 적용
+	
+	// !!! 이 부분은 순서가 중요
+	// 1) 먼저 fadeOut을 통해 클래스 애니메이션 효과를 적용
+	// 2) 절대 fadeOut 코드와 같이 적용해서는 안된다 / 논리적인 오류 발생
+	// 3) animation 효과가 적용된 element에 EventListener를 적용
+	// 4) animationend 속성은 element의 animation 적용 시간이 끝나는 시점을 반환
+	// 5) EventListener의 첫번째 인자로 animationend 속성을 적용
+	// 6) 두번째 인자로 적용할 인자를 callback 함수 형태로 정의
+	function closeModal() {
 		modal.classList.add("fadeOut");
-		// 2) 절대 fadeOut 코드와 같이 적용해서는 안된다 / 논리적인 오류 발생
-		// 3) fadeOut 클래스의 애니메이션 적용 시간을 확인하여 setTimeOut 시간을 동일하게 적용해야 한다
-		setTimeout(() => {
+		modal.addEventListener("animationend", () => {
 			modal.classList.remove("is-visible","fadeIn");
-		}, 500);
+		}, {once: true});
 	}
 	
 	openBtn.addEventListener("click", openModal);
