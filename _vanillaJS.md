@@ -94,8 +94,35 @@ function selectedOption(event)(e){
 	padding:25px; 
 	z-index:500; 
 }
-.hidden {
-	display: none;
+
+/** fade effect **/
+@-webkit-keyframes fadein {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@keyframes fadein {
+	0%   {opacity: 0;}
+	100% {opacity: 1;}
+}
+.fadeIn {
+	-moz-animation   : fadein 0.5s linear;
+	-webkit-animation: fadein 0.5s linear;
+	animation        : fadein 0.5s linear;
+}
+
+@-webkit-keyframes fadeout {
+	0%   {opacity: 1;}
+	100% {opacity: 0;}
+}
+@keyframes fadeout {
+	0%   {opacity: 1;}
+	100% {opacity: 0;}
+}
+.fadeOut {
+	-moz-animation     : fadeout 0.5s linear;
+	-webkit-animation  : fadeout 0.5s linear;
+	animation          : fadeout 0.5s linear;
+	animation-fill-mode: forwards;
 }
 ```
   
