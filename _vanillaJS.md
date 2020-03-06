@@ -150,7 +150,7 @@ function bindingModal() {
 	function closeModal() {
 		modal.classList.add("fadeOut");
 		modal.addEventListener("animationend", () => {
-			modal.classList.remove("is_visible","fadeIn");
+			modal.classList.remove("is_visible", "fadeIn");
 		}, {once: true});
 	}
 	
