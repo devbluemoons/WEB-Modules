@@ -36,7 +36,7 @@ function selectedOption(event)(e){
 <div class="modal">
 	<div class="modal_overlay"></div>
 	<div class="modal_content">
-		<div class="b-close">X</div>
+		<div class="close_icon">X</div>
 		<div class="btnRight">
 			<a href="#">search</a>
 			<a href="#">save</a>
@@ -70,7 +70,7 @@ function selectedOption(event)(e){
 	height: 100%;
 	position: absolute;
 }
-.b-close {
+.close_icon {
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -129,7 +129,7 @@ function bindingModal() {
 	const overlay = document.querySelector(".modal_overlay");
 	const openBtn = document.getElementById("openPopup");
 	const closeBtn = document.getElementById("closePopup");
-	const b_close = document.querySelector(".b-close");
+	const closeIcon = document.querySelector(".close_icon");
 	
 	function openModal() {
 		modal.classList.remove("fadeOut");
@@ -156,7 +156,7 @@ function bindingModal() {
 	
 	openBtn.addEventListener("click", openModal);
 	closeBtn.addEventListener("click", closeModal);
-	b_close.addEventListener("click", closeModal);
+	closeIcon.addEventListener("click", closeModal);
 	overlay.addEventListener("click", closeModal);
 	
 	/* escape */
