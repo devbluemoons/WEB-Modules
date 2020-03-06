@@ -165,3 +165,29 @@ function bindingModal() {
 	});
 }
 ```
+  
+###### xmlHttpRequest
+```js
+function xmlHttpRequest(type, url, data){
+	
+	return new Promise((resolve, reject) => {
+		
+		const xhr = new XMLHttpRequest();
+		
+		xhr.open(type, url, true);
+		xhr.onreadystatechange = () => {
+			
+			if (xhr.readyState !== XMLHttpRequest.DONE) return;
+			if (xhr.status >= 200 && xhr.status < 300) {
+				resolve(xhr.response);
+			} else {
+				reject({
+					status: xhr.status,
+					statusText: xhr.statusText
+				});
+			}
+		};
+		xhr.send(data ? JSON.stringify(data) : null);
+	});
+}
+```
