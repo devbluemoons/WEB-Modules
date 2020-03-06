@@ -54,7 +54,7 @@ function selectedOption(event)(e){
 	display: none;
 }
 
-.modal.is-visible {
+.modal.is_visible {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -101,7 +101,7 @@ function selectedOption(event)(e){
 	0%   {opacity: 0;}
 	100% {opacity: 1;}
 }
-.fade-in {
+.fadeIn {
 	-moz-animation   : fade-in 700ms;
 	-webkit-animation: fade-in 700ms;
 	animation        : fade-in 700ms;
@@ -115,7 +115,7 @@ function selectedOption(event)(e){
 	0%   {opacity: 1;}
 	100% {opacity: 0;}
 }
-.fade-out {
+.fadeOut {
 	-moz-animation   : fade-out 700ms;
 	-webkit-animation: fade-out 700ms;
 	animation        : fade-out 700ms;
@@ -132,8 +132,8 @@ function bindingModal() {
 	const b_close = document.querySelector(".b-close");
 	
 	function openModal() {
-		modal.classList.remove("fade-out");
-		modal.classList.add("is-visible", "fade-in");
+		modal.classList.remove("fadeOut");
+		modal.classList.add("is_visible", "fadeIn");
 	}
 	
 	// !!! 이 부분은 순서가 중요
@@ -148,9 +148,9 @@ function bindingModal() {
 	// 8) 세번째 parameter로 인하여 EventListener는 한번만 실행된다
 	
 	function closeModal() {
-		modal.classList.add("fade-out");
+		modal.classList.add("fadeOut");
 		modal.addEventListener("animationend", () => {
-			modal.classList.remove("is-visible","fade-in");
+			modal.classList.remove("is_visible","fadeIn");
 		}, {once: true});
 	}
 	
