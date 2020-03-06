@@ -102,9 +102,9 @@ function selectedOption(event)(e){
 	100% {opacity: 1;}
 }
 .fade-in {
-	-moz-animation   : fade-in 0.5s;
-	-webkit-animation: fade-in 0.5s;
-	animation        : fade-in 0.5s;
+	-moz-animation   : fade-in 700ms;
+	-webkit-animation: fade-in 700ms;
+	animation        : fade-in 700ms;
 }
 
 @-webkit-keyframes fade-out {
@@ -116,9 +116,9 @@ function selectedOption(event)(e){
 	100% {opacity: 0;}
 }
 .fade-out {
-	-moz-animation   : fade-out 0.5s;
-	-webkit-animation: fade-out 0.5s;
-	animation        : fade-out 0.5s;
+	-moz-animation   : fade-out 700ms;
+	-webkit-animation: fade-out 700ms;
+	animation        : fade-out 700ms;
 }
 ```
   
