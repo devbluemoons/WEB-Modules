@@ -8,6 +8,7 @@ https://developer.mozilla.org/ko/docs/Web/API/Element/attributes
 ###### `NodeList` is alive collection
   
 - `html` 보다 `script` 코드를 하위에 위치시켜야 할 때가 있다
+- `script` 코드는 되도록 `html`, `css`보다 하단에 두는 것이 좋다
 - `script` 코드가 실행되는 시점에 코드상에는 `element`들이 존재하지만 실제 브라우져에서 제대로 인식하지 못하는 경우
   
 https://stackoverflow.com/questions/5844732/getelementsbytagname-length-returns-zero
