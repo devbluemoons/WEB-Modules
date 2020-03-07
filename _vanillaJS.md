@@ -225,9 +225,14 @@ function searchByEnter() {
 ###### formData
 ```js
 const formData = new FormData();
-formDat.append("key", value);
+formData.append("key", value);
 
 const formData = new FormData(document.getElementById("searchForm");
+```
+  
+###### reset form tag data
+```js
+document.getElementById("myForm").reset();
 ```
   
 ###### document.querySelector / element.querySelector
