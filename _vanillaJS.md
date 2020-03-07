@@ -212,3 +212,12 @@ function search() {
 	});
 }
 ```
+  
+###### search by keydown enter
+```js
+function searchByEnter() {
+	document.addEventListener("keydown", e => {
+		e.keyCode === 13 ? search() : null;
+	});
+}
+```
