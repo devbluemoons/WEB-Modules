@@ -191,3 +191,24 @@ function xmlHttpRequest(type, url, data){
 	});
 }
 ```
+
+###### fetch
+```js
+function search() {
+	
+	/* !!주의 : form 데이터를 넘길때  get 메소드를 사용하면 typeError가 발생한다 */
+	
+	fetch("/test/findAllTestDev", {
+		method: "POST",
+		body: new FormData(document.getElementById("searchForm"))
+	}).then(response => {
+		if(response.ok) {
+			return response.text();
+		}
+	}).then(data => {
+		document.getElementById("tableContents").innerHTML = data;
+	}).catch(error => {
+		console.log("error", error);
+	});
+}
+```
