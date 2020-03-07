@@ -227,7 +227,7 @@ function searchByEnter() {
 const formData = new FormData();
 formData.append("key", value);
 
-const formData = new FormData(document.getElementById("searchForm");
+const formData = new FormData(document.getElementById("searchForm"));
 ```
   
 ###### reset form tag data
