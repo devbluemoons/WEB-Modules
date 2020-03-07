@@ -221,3 +221,18 @@ function searchByEnter() {
 	});
 }
 ```
+  
+###### formData
+```js
+const formData = new FormData();
+formDat.append("key", value);
+
+const formData = new FormData(document.getElementById("searchForm");
+```
+  
+###### document.querySelector / element.querySelector
+```js
+document.querySelector("#updateForm input[name=address]");
+const el = document.getElementById("deleteForm");
+const seq = el.querySelector("input[type=hidden]").value;
+```
