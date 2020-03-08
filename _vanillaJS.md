@@ -243,7 +243,6 @@ formData.append("key", value);
 for(let entry of formData.entries()) {
     console.log(entry);
 }
-https://stackoverflow.com/questions/40062477/formdata-append-not-working
 ```
 https://stackoverflow.com/questions/40062477/formdata-append-not-working
   
