@@ -235,6 +235,16 @@ const formData = new FormData(document.getElementById("searchForm"));
 document.getElementById("myForm").reset();
 ```
   
+###### search formData's key / value
+```js
+const formData = new FormData();
+formData.append("key", value);
+
+for(let entry of formData.entries()) {
+    console.log(entry);
+}
+```
+  
 ###### document.querySelector / element.querySelector
 ```js
 document.querySelector("#updateForm input[name=address]");
