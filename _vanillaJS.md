@@ -225,6 +225,7 @@ function searchByEnter() {
 ###### formData
 ```js
 const formData = new FormData();
+<!-- you must set same key's name and param's name  -->
 formData.append("key", value);
 
 const formData = new FormData(document.getElementById("searchForm"));
