@@ -252,4 +252,5 @@ https://stackoverflow.com/questions/40062477/formdata-append-not-working
 document.querySelector("#updateForm input[name=address]");
 const el = document.getElementById("deleteForm");
 const seq = el.querySelector("input[type=hidden]").value;
+const radio = el.querySelector("input[type=radio]:checked");
 ```
