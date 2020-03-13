@@ -266,3 +266,37 @@ function autoLoad(e){
 	}, time);
 }
 ```
+###### table sort
+```html
+<th class="sorting" onclick="sort(event)"><input type="hidden" value="001"/>001</th>
+```
+  
+```js
+function sort(e){
+	
+	let className = null;
+	
+	if(e.target.classList.length === 1){
+		className = "sortingDown";
+	}else if(e.target.classList.contains("sortingDown")){
+		className = "sortingUp";
+	}else if(e.target.classList.contains("sortingUp")){
+		className = "sortingDown";
+	}
+	
+	const ths = document.getElementsByTagName("th");
+	
+	for(let i=0; i<ths.length; i++){
+		ths[i].classList.remove("sortingUp","sortingDown");
+	}
+	e.target.classList.add(className);
+	
+	const el = document.getElementsByClassName(className);
+	const orderBy = el[0].querySelector("input[type=hidden]").value;
+	const sortKey = className === "sortingDown" ? "DESC" : "ASC";
+	
+	const param = {orderBy : orderBy, sortKey : sortKey};
+	console.log(param);
+	findData(param);
+}
+```
