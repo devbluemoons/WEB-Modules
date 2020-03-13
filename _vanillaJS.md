@@ -296,7 +296,6 @@ function sort(e){
 	const sortKey = className === "sortingDown" ? "DESC" : "ASC";
 	
 	const param = {orderBy : orderBy, sortKey : sortKey};
-	console.log(param);
 	findData(param);
 }
 ```
