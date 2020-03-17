@@ -254,6 +254,10 @@ const el = document.getElementById("deleteForm");
 const seq = el.querySelector("input[type=hidden]").value;
 const radio = el.querySelector("input[type=radio]:checked");
 const trs = el.querySelectorAll("tbody tr");
+
+el.querySelector("input[name=MODEL]").value = typeof data[0].MODEL === "undefined" ? "" : data[0].MODEL;
+el.querySelector("select[name=FORMAT_ID]").value = data[0].FORMAT_ID;
+el.querySelector("input[name=HC_YN]").checked = data[0].HC_YN === "Y" ? true : false;
 ```
   
 ###### setInterval
