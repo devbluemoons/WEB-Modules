@@ -307,3 +307,9 @@ function sort(e){
 	findData(param);
 }
 ```
+  
+###### confirm
+```js
+const yn = confirm("confirm method returns boolean value when you click yes or no");
+if(!yn) return;
+```
