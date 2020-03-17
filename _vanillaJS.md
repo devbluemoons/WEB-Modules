@@ -196,7 +196,10 @@ function xmlHttpRequest(type, url, data){
 ```js
 function search() {
 	
-	/* !!주의 : form 데이터를 넘길때  get 메소드를 사용하면 typeError가 발생한다 */
+	/* !!주의 : form 데이터를 넘길때  get 메소드를 사용하면 typeError가 발생한다
+	404 같은 bad request 의 경우, catch() 에서 처리되는 거 아닌가? 라고 생각 하실 수 있겠지만 
+	google develop 의 document 에 따르면 request 가 완료되지 않은 경우
+	(통신이 끊기거나 시간이 경과된 경우) 에만 catch() 메소드를 통해 처리된다. */
 	
 	fetch("/test/findAllTestDev", {
 		method: "POST",
