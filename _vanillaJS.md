@@ -316,3 +316,33 @@ function sort(e){
 const yn = confirm("confirm method returns boolean value when you click yes or no");
 if(!yn) return;
 ```
+  
+###### check form values
+```js
+function verifyEmail(value) {
+	const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	return value.match(regExp) != null ? true : false;
+};
+
+function checkPassWord(value) {
+	// 8~20자 이내 영문, 숫자 ,특수문자 포함한 비밀번호 조합
+	const pw = value;
+	const num = pw.search(/[0-9]/g);
+	const eng = pw.search(/[a-z]/ig);
+	const spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+	if(pw.length < 8 || pw.length > 20){
+		alert("8자리 ~ 20자리 이내로 입력해 주세요.");
+		return false;
+	}
+	if(pw.search(/₩s/) != -1){
+		alert("비밀번호는 공백없이 입력해 주세요.");
+		return false;
+	} 
+	if(num < 0 || eng < 0 || spe < 0 ){
+		alert("영문, 숫자, 특수문자를 혼합하여 입력해 주세요.");
+		return false;
+	}
+	return true;
+}
+```
