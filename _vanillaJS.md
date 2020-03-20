@@ -346,3 +346,10 @@ function checkPassWord(value) {
 	return true;
 }
 ```
+  
+###### filtering only numbers
+```js
+document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e){
+	e.target.value = e.target.value.replace(/[^0-9]/g,"");
+});
+```
