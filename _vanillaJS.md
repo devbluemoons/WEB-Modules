@@ -345,9 +345,10 @@ function checkID(value) {
 
 function checkPassWord(value) {
 	// 8~20자 이내 영문(소문자), 숫자 ,특수문자 포함한 비밀번호 조합
+	// input[type=password] 는 키보드 설정이 한글이어도 영문으로 입력받도록 설정되어 있다
+	
 	const number = value.search(/[0-9]/g);
 	const english = value.search(/[a-z]/ig);
-	const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 	const specialCharacter = value.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
 	if(value.length < 8 || value.length > 20){
@@ -360,10 +361,6 @@ function checkPassWord(value) {
 	} 
 	if(number < 0 || english < 0 || specialCharacter < 0 ){
 		alert("[비밀번호]는 영문(소문자), 숫자, 특수문자를 혼합하여 입력해 주세요.");
-		return false;
-	}
-	if(value.match(korean)) {
-		alert("한글은 [ID]에 포함될 수 없습니다.");
 		return false;
 	}
 	return true;
