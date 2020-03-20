@@ -347,6 +347,7 @@ function checkPassWord(value) {
 	// 8~20자 이내 영문(소문자), 숫자 ,특수문자 포함한 비밀번호 조합
 	const number = value.search(/[0-9]/g);
 	const english = value.search(/[a-z]/ig);
+	const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 	const specialCharacter = value.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
 	if(value.length < 8 || value.length > 20){
@@ -359,6 +360,10 @@ function checkPassWord(value) {
 	} 
 	if(number < 0 || english < 0 || specialCharacter < 0 ){
 		alert("[비밀번호]는 영문(소문자), 숫자, 특수문자를 혼합하여 입력해 주세요.");
+		return false;
+	}
+	if(value.match(korean)) {
+		alert("한글은 [ID]에 포함될 수 없습니다.");
 		return false;
 	}
 	return true;
@@ -384,6 +389,13 @@ function verifyEmail(value) {
 ```
   
 ###### formatting by RegExp
+```js
+//formatting only english with number
+document.querySelector("input[name=USER_ID]").addEventListener("keyup", function(e) {
+	e.target.value = e.target.value.replace(/[^a-z|0-9]/gi,"");
+});
+```
+  
 ```js
 <!-- only korean -->
 document.querySelector("input[name=USER_NAME]").addEventListener("keyup", function(e) {
