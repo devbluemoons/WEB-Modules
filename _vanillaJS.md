@@ -383,8 +383,16 @@ function verifyEmail(value) {
 };
 ```
   
-###### filtering only numbers
+###### formatting by RegExp
 ```js
+<!-- only korean -->
+document.querySelector("input[name=USER_NAME]").addEventListener("keyup", function(e) {
+	e.target.value = e.target.value.replace(/[^ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/gi,"");
+});
+```
+  
+```js
+<!-- only number with hyphen -->
 document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e){
 	e.target.value = e.target.value.replace(/[^0-9]/gi,"");
 	e.target.value = e.target.value.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
