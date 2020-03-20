@@ -319,32 +319,68 @@ if(!yn) return;
   
 ###### check form values
 ```js
-function verifyEmail(value) {
-	const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	return value.match(regExp) != null ? true : false;
-};
+function checkID(value) {
+	// 8~12자 이내 영문, 숫자 ,특수문자 포함한 비밀번호 조합
+	const english = value.search(/[a-z]/ig);
+	const korean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
 
-function checkPassWord(value) {
-	// 8~20자 이내 영문, 숫자 ,특수문자 포함한 비밀번호 조합
-	const pw = value;
-	const num = pw.search(/[0-9]/g);
-	const eng = pw.search(/[a-z]/ig);
-	const spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
-
-	if(pw.length < 8 || pw.length > 20){
-		alert("8자리 ~ 20자리 이내로 입력해 주세요.");
+	if(value.length < 4 || value.length > 20){
+		alert("[ID]는 4자리 ~ 20자리 이내로 입력해 주세요.");
 		return false;
 	}
-	if(pw.search(/₩s/) != -1){
-		alert("비밀번호는 공백없이 입력해 주세요.");
+	if(value.search(/₩s/) != -1){
+		alert("[ID]는 공백없이 입력해 주세요.");
 		return false;
 	} 
-	if(num < 0 || eng < 0 || spe < 0 ){
-		alert("영문, 숫자, 특수문자를 혼합하여 입력해 주세요.");
+	if(english < 0){
+		alert("영문(소문자)를 포함하여 [ID]를 작성해 주세요.");
+		return false;
+	}
+	if(value.match(korean)){
+		alert("한글은 [ID]에 포함될 수 없습니다.");
 		return false;
 	}
 	return true;
 }
+
+function checkPassWord(value) {
+	// 8~20자 이내 영문(소문자), 숫자 ,특수문자 포함한 비밀번호 조합
+	const number = value.search(/[0-9]/g);
+	const english = value.search(/[a-z]/ig);
+	const specialCharacter = value.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+	if(value.length < 8 || value.length > 20){
+		alert("[비밀번호]는 8자리 ~ 20자리 이내로 입력해 주세요.");
+		return false;
+	}
+	if(value.search(/₩s/) != -1){
+		alert("[비밀번호]는 공백없이 입력해 주세요.");
+		return false;
+	} 
+	if(number < 0 || english < 0 || specialCharacter < 0 ){
+		alert("[비밀번호]는 영문(소문자), 숫자, 특수문자를 혼합하여 입력해 주세요.");
+		return false;
+	}
+	return true;
+}
+
+function checkKorean(value) {
+	const regExp = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
+	if(!value.match(regExp)){
+		alert("[이름]은 한글로만 작성할 수 있습니다.");
+		return false;
+	}
+	return true;
+}
+
+function verifyEmail(value) {
+	const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	if(!value.match(regExp)){
+		alert("@문자와 .(dot)문자를 포함하여 [이메일] 형식에 맞게 작성하세요.");
+		return false;
+	}
+	return true;
+};
 ```
   
 ###### filtering only numbers
