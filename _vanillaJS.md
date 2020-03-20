@@ -386,6 +386,8 @@ function verifyEmail(value) {
 ###### filtering only numbers
 ```js
 document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e){
-	e.target.value = e.target.value.replace(/[^0-9]/g,"");
+	e.target.value = e.target.value.replace(/[^0-9]/gi,"");
+	e.target.value = e.target.value.replace(/(\d{3})(\d{4})(\d{4})/, "$1-$2-$3");
 });
 ```
+[Ref.] https://stackoverflow.com/questions/6981487/insert-hyphens-in-javascript
