@@ -75,4 +75,49 @@ function getHhMMss() {
 function getCurrentTime() {
 	return `${yyyyMMdd()} ${hhMMss()}`;
 }
+
+//first day of this month
+function getFirstDay() {
+	
+	const firstDay = new Date(date.year, date.month, 1);
+	
+	let yyyy = firstDay.getFullYear();
+	let mm = firstDay.getMonth() + 1;
+	let dd = firstDay.getDate();
+	
+	mm = (mm < 10) ? `0${mm}` : mm;
+	dd = dd < 10 ? `0${dd}` : dd;
+	
+	return `${yyyy}-${mm}-${dd}`;
+}
+
+//first day of last month
+function getLastMonthFirstDay() {
+	
+	const firstDay = new Date(date.year, date.month, 1);
+	
+	let yyyy = firstDay.getFullYear();
+	let mm = firstDay.getMonth();
+	let dd = firstDay.getDate();
+	
+	mm = (mm < 10) ? `0${mm}` : mm;
+	dd = dd < 10 ? `0${dd}` : dd;
+	
+	return `${yyyy}-${mm}-${dd}`;
+}
+
+//last day of last month
+function getLastMonthLastDay() {
+	
+	const firstDay = new Date(date.year, (date.month + 1), 0);
+	
+	let yyyy = firstDay.getFullYear();
+	let mm = firstDay.getMonth();
+	let dd = firstDay.getDate();
+	
+	mm = (mm < 10) ? `0${mm}` : mm;
+	dd = dd < 10 ? `0${dd}` : dd;
+	
+	return `${yyyy}-${mm}-${dd}`;
+}
 ```
