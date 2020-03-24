@@ -1,7 +1,7 @@
 #### data and time utilities
 ```js
 //date class
-class currentDate{
+class CurrentDate{
 	
 	constructor() {
 		this.date = new Date();
@@ -11,63 +11,62 @@ class currentDate{
 		return {
 			year   : this.date.getFullYear(),
 			month  : this.date.getMonth(),
-			day    : this.date.getDay(),
+			date   : this.date.getDate(),
 			hours  : this.date.getHours(),
 			minutes: this.date.getMinutes(),
-			seconds: this.date.getSeconds()
+			seconds: this.date.getSeconds(),
 		}
 	}
 }
 
-const date = new currentDate().instance();
+const date = new CurrentDate().instance();
 
 //getFullYear
-function getYear(){
+function getYear() {
 	return date.year;
 }
 
 //getMonth
-function getMonth(){
-	return parseInt(date.month) < 10 ? `0${date.month}` : date.month;
+function getMonth() {
+	return (date.month + 1) < 10 ? `0${date.month + 1}` : (date.month + 1);
 }
 
 //getDay
-function getDay(){
-	return parseInt(date.day) < 10 ? `0${date.day}` : date.day;
+function getDay() {
+	return date.date < 10 ? `0${date.date}` : date.date;
 }
 
 //getHours
-function getHours(){
-	return parseInt(date.hours) < 10 ? `0${date.hours}` : date.hours;
+function getHours() {
+	return date.hours < 10 ? `0${date.hours}` : date.hours;
 }
 
 //getMinutes
-function getMinutes(){
-	return parseInt(date.minutes) < 10 ? `0${date.minutes}` : date.minutes;
+function getMinutes() {
+	return date.minutes < 10 ? `0${date.minutes}` : date.minutes;
 }
 
 //getSeconds
-function getSeconds(){
-	return parseInt(date.seconds) < 10 ? `0${date.seconds}` : date.seconds;
+function getSeconds() {
+	return date.seconds < 10 ? `0${date.seconds}` : date.seconds;
 }
 
-
 //getYYYYMMDD
-function yyyyMMdd() {
+function getYyyyMmDd() {
 	
-	const yyyy = date.year();
-	const mm = parseInt(date.month) < 10 ? `0${date.month}` : date.month;
-	const dd = parseInt(date.day) < 10 ? `0${date.day}` : date.day;
+	const yyyy = date.year;
+	const mm = (date.month + 1) < 10 ? `0${date.month + 1}` : (date.month + 1);
+	const dd = date.date < 10 ? `0${date.date}` : date.date;
 	
 	return `${yyyy}-${mm}-${dd}`;
 }
 
 //getHHMMSS
-function hhMMss() {
+function getHhMMss() {
 	
-	const hh = parseInt(date.hours) < 10 ? `0${date.hours}` : date.hours;
-	const mm = parseInt(date.minutes) < 10 ? `0${date.minutes}` : date.minutes;
-	const ss = parseInt(date.seconds) < 10 ? `0${date.seconds}` : date.seconds;
+	const hh = date.hours < 10 ? `0${date.hours}` : date.hours;
+	const mm = date.minutes < 10 ? `0${date.minutes}` : date.minutes;
+	const ss = date.seconds < 10 ? `0${date.seconds}` : date.seconds;
 	
 	return `${hh}:${mm}:${ss}`;
 }
