@@ -205,9 +205,10 @@ function search() {
 		method: "POST",
 		body: new FormData(document.getElementById("searchForm"))
 	}).then(response => {
-		if(response.ok) {
-			return response.text();
+		if(!response.ok) {
+			throw Error(response.status);
 		}
+		return response.text();
 	}).then(data => {
 		document.getElementById("tableContents").innerHTML = data;
 	}).catch(error => {
