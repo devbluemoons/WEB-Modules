@@ -415,3 +415,119 @@ document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e
 const li = document.createElement("li");
 li.textContent = "abc123";
 ```
+  
+###### real time search using input tag with div
+```html
+<input type="text" class="input04 wdt160px" name="DIRECT_INPUT" placeholder="직접입력" disabled>
+<div id="searchResult" class="real_time_search wdt160px"></div>
+```
+```css
+.show {
+	display: block;
+	position: fixed;
+	max-height: 250px;
+	overflow: auto;
+	border: solid 1px #EBEBE4;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+}
+.real_time_search li {
+	padding-left: 3px;
+	padding-bottom: 3px;
+}
+.real_time_search li:hover {
+	background-color: #EBEBE4;
+}
+```
+```js
+// 실시간 검색(자동완성)
+document.querySelector("input[name=DIRECT_INPUT]").addEventListener("keyup", e => {
+	
+	const value = e.target.value ? e.target.value : "";
+	
+	anotherDelay(function() {
+		test(value);
+	}, 500);
+});
+
+const anotherDelay = (() => {
+	let timer = null;
+	const delay = (func, ms) => {
+		timer ? clearTimeout(timer) : null;
+		timer = setTimeout(func, ms);
+	}
+	return delay;
+})();
+
+function test(value) {
+	console.log(value);
+	const formData = new FormData();
+	formData.append("IP_STR", value);
+	
+	fetch("/ip/findDiIpByIpStr", {
+		method: "POST",
+		body: formData
+	}).then(response => {
+		if(!response.ok){
+			throw Error(response.status);
+		}
+		return response.json();
+	}).then(data => {
+		if(data) {
+			realTimeSearch(data);
+		}
+	}).catch(error => {
+		console.log("Error:",error);
+	});
+}
+
+function realTimeSearch(data) {
+	
+	const searchKeyword = document.querySelector("input[name=DIRECT_INPUT]");
+	const searchResult = document.getElementById("searchResult");
+	
+	if(searchKeyword.value !== "") {
+		searchResult.innerHTML = "";
+		searchResult.classList.add("show");
+	}else{
+		searchResult.classList.remove("show");
+	}
+	
+	const ul = document.createElement("ul");
+	data.forEach(item => {
+		const li = document.createElement("li");
+		li.textContent = item.IP_STR;
+		li.addEventListener("click", e => {
+			searchKeyword.value = e.target.textContent;
+			searchResult.classList.remove("show");
+		});
+		ul.appendChild(li);
+	});
+	searchResult.append(ul);
+}
+
+function delay(callback, ms) {
+	let timer = 0;
+	
+	return function() {
+		const self = this;
+		const args = arguments;
+		
+		clearTimeout(timer);
+		
+		timer = setTimeout(() => {
+			callback.apply(self, args);
+		}, ms || 0);
+	};
+}
+
+function delayES6(fn, ms) {
+	let timer = 0;
+	return function(...args) {
+		clearTimeout(timer);
+		timer = setTimeout(fn.bind(this, ...args), ms || 0);
+	}
+}
+```
+[Ref.01] https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing
+[Ref.02] https://c10106.tistory.com/4274
