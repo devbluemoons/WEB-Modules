@@ -409,3 +409,9 @@ document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e
 });
 ```
 [Ref.] https://stackoverflow.com/questions/6981487/insert-hyphens-in-javascript
+  
+###### set text to li tag
+```js
+const li = document.createElement("li");
+li.textContent = "abc123";
+```
