@@ -1,7 +1,9 @@
-###### callback
+## callback
   
-###### call apply bind 
-  
-###### this
+###### call
+
+###### apply
+
+###### bind
   
 ###### promise async await
