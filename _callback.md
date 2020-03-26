@@ -5,5 +5,3 @@
 ###### apply
 
 ###### bind
-  
-###### promise async await
