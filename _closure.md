@@ -1,5 +1,5 @@
 ## closure
-###### Basic structure
+###### basic structure
 ```js
 const closure = (function() {
 	
@@ -17,3 +17,5 @@ closure(); // true 0
 closure(); // false 1
 closure(); // true 2 
 ```
+  
+###### self-invoking function
