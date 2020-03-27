@@ -443,6 +443,7 @@ li.textContent = "abc123";
 // 실시간 검색(자동완성)
 document.querySelector("input[name=DIRECT_INPUT]").addEventListener("keyup", e => {
 
+	if(e.keyCode === 27) return false; // when click escape button
 	const value = e.target.value || "";
 	
 	delayKeyup(function() {
@@ -493,6 +494,15 @@ function realTimeSearch(data) {
 	});
 	searchResult.append(ul);
 }
+
+document.querySelector("body").addEventListener("click", () => {
+	document.getElementById("searchResult").classList.remove("show");
+});
+document.addEventListener("keydown", e => {
+	if(e.keyCode === 27) {
+		document.getElementById("searchResult").classList.remove("show");
+	}
+});
 ```
 ###### delay (basic)
 ```js
@@ -518,7 +528,7 @@ function delayES6(fn, ms) {
 	let timer = 0;
 	const self = this;
 	
-	return ...args => {
+	return (...args) => {
 		clearTimeout(timer);
 		timer = setTimeout(fn.bind(self, ...args), ms || 0);
 	}
