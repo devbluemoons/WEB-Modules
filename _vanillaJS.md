@@ -532,5 +532,5 @@ const delayKeyup = (function() {
 	return delay;
 })();
 ```
-[Ref.01] https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing
+[Ref.01] https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing  
 [Ref.02] https://c10106.tistory.com/4274
