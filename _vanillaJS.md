@@ -416,7 +416,7 @@ const li = document.createElement("li");
 li.textContent = "abc123";
 ```
   
-###### real time search using input tag with div
+###### real time search using input and div tag
 ```html
 <input type="text" class="input04 wdt160px" name="DIRECT_INPUT" placeholder="직접입력" disabled>
 <div id="searchResult" class="real_time_search wdt160px"></div>
