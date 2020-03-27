@@ -515,9 +515,10 @@ function delay(callback, ms) {
 ```js
 function delayES6(fn, ms) {
 	let timer = 0;
-	return function(...args) {
+	const self = this;
+	return ...args => {
 		clearTimeout(timer);
-		timer = setTimeout(fn.bind(this, ...args), ms || 0);
+		timer = setTimeout(fn.bind(self, ...args), ms || 0);
 	}
 }
 ```
