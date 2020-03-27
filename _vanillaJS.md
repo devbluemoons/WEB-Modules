@@ -442,15 +442,34 @@ li.textContent = "abc123";
 ```js
 // 실시간 검색(자동완성)
 document.querySelector("input[name=DIRECT_INPUT]").addEventListener("keyup", e => {
+
+	const value = e.target.value || "";
 	
-	const value = e.target.value ? e.target.value : "";
-	
-	anotherDelay(function() {
-		test(value);
+	delayKeyup(function() {
+		
+		const formData = new FormData();
+		formData.append("IP_STR", value);
+		
+		fetch("/ip/findDiIpByIpStr", {
+			method: "POST",
+			body: formData
+		}).then(response => {
+			if(!response.ok){
+				throw Error(response.status);
+			}
+			return response.json();
+		}).then(data => {
+			if(data) {
+				realTimeSearch(data);
+			}
+		}).catch(error => {
+			console.log("Error:",error);
+		});
+		
 	}, 500);
 });
 
-const anotherDelay = (() => {
+const delayKeyup = (function() {
 	let timer = null;
 	const delay = (func, ms) => {
 		timer ? clearTimeout(timer) : null;
@@ -458,28 +477,6 @@ const anotherDelay = (() => {
 	}
 	return delay;
 })();
-
-function test(value) {
-	console.log(value);
-	const formData = new FormData();
-	formData.append("IP_STR", value);
-	
-	fetch("/ip/findDiIpByIpStr", {
-		method: "POST",
-		body: formData
-	}).then(response => {
-		if(!response.ok){
-			throw Error(response.status);
-		}
-		return response.json();
-	}).then(data => {
-		if(data) {
-			realTimeSearch(data);
-		}
-	}).catch(error => {
-		console.log("Error:",error);
-	});
-}
 
 function realTimeSearch(data) {
 	
