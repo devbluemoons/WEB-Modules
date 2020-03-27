@@ -538,11 +538,10 @@ function delayES6(fn, ms) {
 ```js
 const delayKeyup = (function() {
 	let timer = null;
-	const delay = (func, ms) => {
+	return (func, ms) => {
 		timer ? clearTimeout(timer) : null;
 		timer = setTimeout(func, ms);
 	}
-	return delay;
 })();
 ```
 [Ref.01] https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing  
