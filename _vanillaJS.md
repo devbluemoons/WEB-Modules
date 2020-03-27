@@ -469,15 +469,6 @@ document.querySelector("input[name=DIRECT_INPUT]").addEventListener("keyup", e =
 	}, 500);
 });
 
-const delayKeyup = (function() {
-	let timer = null;
-	const delay = (func, ms) => {
-		timer ? clearTimeout(timer) : null;
-		timer = setTimeout(func, ms);
-	}
-	return delay;
-})();
-
 function realTimeSearch(data) {
 	
 	const searchKeyword = document.querySelector("input[name=DIRECT_INPUT]");
@@ -502,7 +493,9 @@ function realTimeSearch(data) {
 	});
 	searchResult.append(ul);
 }
-
+```
+###### delay (basic)
+```js
 function delay(callback, ms) {
 	let timer = 0;
 	
@@ -517,7 +510,9 @@ function delay(callback, ms) {
 		}, ms || 0);
 	};
 }
-
+```
+###### delay (es6)
+```js
 function delayES6(fn, ms) {
 	let timer = 0;
 	return function(...args) {
@@ -525,6 +520,17 @@ function delayES6(fn, ms) {
 		timer = setTimeout(fn.bind(this, ...args), ms || 0);
 	}
 }
+```
+###### delay (closure)
+```js
+const delayKeyup = (function() {
+	let timer = null;
+	const delay = (func, ms) => {
+		timer ? clearTimeout(timer) : null;
+		timer = setTimeout(func, ms);
+	}
+	return delay;
+})();
 ```
 [Ref.01] https://stackoverflow.com/questions/1909441/how-to-delay-the-keyup-handler-until-the-user-stops-typing
 [Ref.02] https://c10106.tistory.com/4274
