@@ -13,3 +13,7 @@ third and fifth child of the div element is a `#text` node.
 const ul = document.querySelector("ul");
 console.log(ul.firstElementChild);
 ```
+[Ref.] https://stackoverflow.com/questions/24907693/selecting-the-firstchild-and-whitespace-issue  
+  
+###### How to get scrollbar position with Javascript?
+[Ref.] https://stackoverflow.com/questions/2481350/how-to-get-scrollbar-position-with-javascript
