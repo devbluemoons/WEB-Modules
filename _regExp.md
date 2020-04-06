@@ -1,5 +1,5 @@
 ## RegExp
-###### special character more over 2
+###### check special character double dot
 ```js
-e.target.value = e.target.value.replace(/[^0-9](.{2,})/,".");
+e.target.value = e.target.value.replace(/(\.\.)/,".");
 ```
