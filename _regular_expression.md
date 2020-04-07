@@ -26,3 +26,6 @@ function floatRexExp(e) {
 	e.target.value = e.target.value.replace(/(\.\d{2})\d{1}/, "$1"); // limit character length 2 after dot
 }
 ```
+###### special character dot(.)
+- `dot(.)` means any character when used alone
+- usually `dot(.)` is used with `\` for example `\.`
