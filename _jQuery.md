@@ -56,7 +56,7 @@ for(let i=0; i<trs.length; i++){
 ```
 ###### jquery selector `:(colon)`
 ```js
-selectOne : $("input visible")
-selctAll : $("input:visible")
+selectOne : checkElement.is('visible')
+selctAll : checkElement.is(':visible')
 ```
 https://stackoverflow.com/questions/10552838/whats-the-purpose-of-a-leading-colon-in-a-jquery-selector
