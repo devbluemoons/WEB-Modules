@@ -573,3 +573,14 @@ if(element.classList.contains("active")) {
     element.classList.add("active");
 }
 ```
+  
+###### throw new Error();
+```js
+const errorMessage = "Thie is a Error";
+
+arrData.forEach(item => {
+    if(parseInt(item) > 255) {
+        throw new Error(errorMessage);
+    }
+});
+```
