@@ -563,3 +563,13 @@ keys.forEach(item => {
 	console.log(obj[item]);
 });
 ```
+  
+###### contains / add / remove
+```js
+if(element.classList.contains("active")) {
+    element.classList.remove("active");
+}else {
+    document.querySelectorAll(".treeview").forEach(item => item.classList.remove("active"));
+    element.classList.add("active");
+}
+```
