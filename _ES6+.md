@@ -39,4 +39,47 @@ if(typeof rowData !== "undefined"){}
 const arr = [...data, 111, 222, 333];
 // object
 const obj = {...data, aaa:111, bbb:222, ccc:333};
+
+const obj01 = {
+  aaa: 111,
+  bbb: 222,
+  ccc: 333,
+  ddd: null,
+  eee: null,
+};
+
+const obj02 = {
+  ddd: 444,
+  eee: 555,
+};
+
+const sumObj = {...obj01, ...obj02};
+
+const innerObj = {
+  aaa: 111,
+  bbb: 222,
+  ccc: 333,
+  obj: {
+    ddd: null,
+    eee: null,
+  }
+}
+
+const objA = {
+  aaa: 111,
+  bbb: 222,
+  ccc: 333,
+}
+
+const objB = {
+  ddd: 444,
+  eee: 555,
+};
+
+const copyInnerObj = {
+  ...objA,
+  obj: {
+    ...objB,
+  },
+};
 ```
