@@ -584,3 +584,12 @@ arrData.forEach(item => {
     }
 });
 ```
+  
+###### filtering by ip address rule
+```js
+// filtering ip
+const ipArr = "010.011.017.019".trim().split(".");
+const ipIntArr = [...ipArr].map(item => parseInt(item));
+
+console.log(ipIntArr.join(".")); // 10.11.17.19
+```
