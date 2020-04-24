@@ -32,3 +32,11 @@ typeof [variable-name] !== "undefined"
 //example
 if(typeof rowData !== "undefined"){}
 ```
+  
+###### spread operator
+```js
+// array
+const arr = [...data, 111, 222, 333];
+// object
+const obj = {...data, aaa:111, bbb:222, ccc:333};
+```
