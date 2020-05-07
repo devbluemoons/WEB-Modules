@@ -1,7 +1,7 @@
 #### data and time utilities
 ```js
 //date class
-class CurrentDate{
+class CurrentDate {
 	
 	constructor() {
 		this.date = new Date();
@@ -19,40 +19,45 @@ class CurrentDate{
 	}
 }
 
-const date = new CurrentDate().instance();
-
 //getFullYear
 function getYear() {
+	const date = new CurrentDate().instance();
 	return date.year;
 }
 
 //getMonth
 function getMonth() {
+	const date = new CurrentDate().instance();
 	return (date.month + 1) < 10 ? `0${date.month + 1}` : (date.month + 1);
 }
 
 //getDay
 function getDay() {
+	const date = new CurrentDate().instance();
 	return date.date < 10 ? `0${date.date}` : date.date;
 }
 
 //getHours
 function getHours() {
+	const date = new CurrentDate().instance();
 	return date.hours < 10 ? `0${date.hours}` : date.hours;
 }
 
 //getMinutes
 function getMinutes() {
+	const date = new CurrentDate().instance();
 	return date.minutes < 10 ? `0${date.minutes}` : date.minutes;
 }
 
 //getSeconds
 function getSeconds() {
+	const date = new CurrentDate().instance();
 	return date.seconds < 10 ? `0${date.seconds}` : date.seconds;
 }
 
 //getYYYYMMDD
 function getYyyyMmDd() {
+	const date = new CurrentDate().instance();
 	
 	const yyyy = date.year;
 	const mm = (date.month + 1) < 10 ? `0${date.month + 1}` : (date.month + 1);
@@ -63,6 +68,7 @@ function getYyyyMmDd() {
 
 //getHHMMSS
 function getHhMMss() {
+	const date = new CurrentDate().instance();
 	
 	const hh = date.hours < 10 ? `0${date.hours}` : date.hours;
 	const mm = date.minutes < 10 ? `0${date.minutes}` : date.minutes;
@@ -71,14 +77,24 @@ function getHhMMss() {
 	return `${hh}:${mm}:${ss}`;
 }
 
+//getHHMMSS
+function getHhMM() {
+	const date = new CurrentDate().instance();
+	
+	const hh = date.hours < 10 ? `0${date.hours}` : date.hours;
+	const mm = date.minutes < 10 ? `0${date.minutes}` : date.minutes;
+	
+	return `${hh}:${mm}`;
+}
+
 //getCurrentTime
 function getCurrentTime() {
-	return `${yyyyMMdd()} ${hhMMss()}`;
+	return `${getYyyyMmDd()} ${getHhMMss()}`;
 }
 
 //first day of this month
 function getFirstDay() {
-	
+	const date = new CurrentDate().instance();
 	const firstDay = new Date(date.year, date.month, 1);
 	
 	let yyyy = firstDay.getFullYear();
@@ -93,7 +109,7 @@ function getFirstDay() {
 
 //first day of last month
 function getLastMonthFirstDay() {
-	
+	const date = new CurrentDate().instance();
 	const firstDay = new Date(date.year, date.month, 1);
 	
 	let yyyy = firstDay.getFullYear();
@@ -108,16 +124,30 @@ function getLastMonthFirstDay() {
 
 //last day of last month
 function getLastMonthLastDay() {
+	const date = new CurrentDate().instance();
+	const lastDay = new Date(date.year, (date.month + 1), 0);
 	
-	const firstDay = new Date(date.year, (date.month + 1), 0);
-	
-	let yyyy = firstDay.getFullYear();
-	let mm = firstDay.getMonth();
-	let dd = firstDay.getDate();
+	let yyyy = lastDay.getFullYear();
+	let mm = lastDay.getMonth();
+	let dd = lastDay.getDate();
 	
 	mm = (mm < 10) ? `0${mm}` : mm;
 	dd = dd < 10 ? `0${dd}` : dd;
 	
 	return `${yyyy}-${mm}-${dd}`;
+}
+
+function getYyyyMmDdHhMmSs(baseDate) {
+	const dateFmt = new Date(baseDate);
+	
+	const yyyy = dateFmt.getFullYear();
+	const MM = (dateFmt.getMonth() + 1) < 10 ? `0${dateFmt.getMonth() + 1}` : (dateFmt.getMonth() + 1);
+	const dd = dateFmt.getDate() < 10 ? `0${dateFmt.getDate()}` : dateFmt.getDate();
+	
+	const hh = dateFmt.getHours() < 10 ? `0${dateFmt.getHours()}` : dateFmt.getHours();
+	const mm = dateFmt.getMinutes() < 10 ? `0${dateFmt.getMinutes()}` : dateFmt.getMinutes();
+	const ss = dateFmt.getSeconds() < 10 ? `0${dateFmt.getSeconds()}` : dateFmt.getSeconds();
+	
+	return `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;
 }
 ```
