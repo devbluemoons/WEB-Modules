@@ -593,3 +593,13 @@ const ipIntArr = [...ipArr].map(item => parseInt(item));
 
 console.log(ipIntArr.join(".")); // 10.11.17.19
 ```
+  
+###### getAttribute
+```html
+<div class="btn_blue" th:value="${row.SEQ}">Action</div>
+```
+```js
+function selectRow(e) {
+    console.log(e.target.getAttribute("value"));
+}
+```
