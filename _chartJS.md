@@ -6,3 +6,17 @@
 - `동적`으로 html을 생성하고 `chartJS`를 적용할 경우
 - 먼저 html를 생성하는 `loop`를 전부 돌린다
 - 그 후 `chartJS`의 `data`를 적용한다
+  
+###### hiding zero datalabels
+```js
+options: {
+  plugins: {
+    datalabels: {
+       display: function(context) {
+          return context.dataset.data[context.dataIndex] !== 0; // or >= 1 or ...
+       }
+    }
+  }
+}
+```
+[Ref.] https://github.com/chartjs/chartjs-plugin-datalabels/issues/6
