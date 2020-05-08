@@ -269,15 +269,22 @@ el.querySelector("select[name=FORMAT_ID]").value = data[0].FORMAT_ID;
 el.querySelector("input[name=HC_YN]").checked = data[0].HC_YN === "Y" ? true : false;
 ```
   
-###### setInterval
+###### setInterval with clearInterval
 ```js
-function autoLoad(e){
-	const oneMinute = 60 * 1000;
-	const time = e ? (parseInt(e.target.value) * oneMinute) : (10 * oneMinute);
-	// 함수 호출 주기보다  내부 로직 실행속도가 더 오래 걸릴 경우 문제가 발생하므로 주의하여 사용
-	setInterval(() => {
-		location.href = "";
-	}, time);
+{
+	let timer = null;
+	function intervalSearch() {
+		
+		const oneMinute = 60 * 1000;
+		const cycle = document.getElementById("cycle");
+		const time = parseInt(cycle.value) * oneMinute;
+		
+		//함수 호출 주기보다  내부 로직 실행속도가 더 오래 걸릴 경우 문제가 발생하므로 주의하여 사용
+		clearInterval(timer);
+		timer = setInterval(() => {
+			location.href = "";
+		}, time);
+	}
 }
 ```
 ###### table sort
