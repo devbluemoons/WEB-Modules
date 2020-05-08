@@ -53,3 +53,10 @@ function idRegExp(e) {
 ###### number / not a number
 - we have to use `\d` when checked only number
 - we have to use `\D` when checked except number
+  
+###### remove white space
+```js
+function removeWhiteSpaceRegExp(e) {
+	e.target.value = e.target.value.replace(/ /g, ""); // remove white space
+}
+```
