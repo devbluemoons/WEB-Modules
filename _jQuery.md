@@ -62,5 +62,5 @@ selctAll : checkElement.is(':visible')
 https://stackoverflow.com/questions/10552838/whats-the-purpose-of-a-leading-colon-in-a-jquery-selector
   
 ###### Object.prototype Issue
-- When Object.prototype is used, there is a problem in jQuery
+- When Object.prototype is used, there is a problem in jQuery  
 [Ref.] https://stackoverflow.com/questions/33063382/jquery-error-matchexprtype-exec-is-not-a-function/33063383
