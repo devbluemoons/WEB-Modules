@@ -271,20 +271,18 @@ el.querySelector("input[name=HC_YN]").checked = data[0].HC_YN === "Y" ? true : f
   
 ###### setInterval with clearInterval
 ```js
-{
-	let timer = null;
-	function intervalSearch() {
-		
-		const oneMinute = 60 * 1000;
-		const cycle = document.getElementById("cycle");
-		const time = parseInt(cycle.value) * oneMinute;
-		
-		//함수 호출 주기보다  내부 로직 실행속도가 더 오래 걸릴 경우 문제가 발생하므로 주의하여 사용
-		clearInterval(timer);
-		timer = setInterval(() => {
-			location.href = "";
-		}, time);
-	}
+function intervalSearch() {
+	
+	const oneMinute = 60 * 1000;
+	const cycle = document.getElementById("cycle");
+	const time = parseInt(cycle.value) * oneMinute;
+	localStorage.setItem("cycle", cycle.value);
+	
+	//함수 호출 주기보다  내부 로직 실행속도가 더 오래 걸릴 경우 문제가 발생하므로 주의하여 사용
+	clearInterval(Object.prototype.timer);
+	Object.prototype.timer = setInterval(() => {
+		location.href = "";
+	}, time);
 }
 ```
 ###### table sort
