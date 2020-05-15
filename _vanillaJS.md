@@ -608,3 +608,14 @@ function selectRow(e) {
     console.log(e.target.getAttribute("value"));
 }
 ```
+###### localStorage
+```js
+//setItem
+localStorage.setItem('myCat', 'Tom');
+//getItem
+var cat = localStorage.getItem('myCat');
+//removeItem
+localStorage.removeItem('myCat');
+//clear (all items)
+localStorage.clear();
+```
