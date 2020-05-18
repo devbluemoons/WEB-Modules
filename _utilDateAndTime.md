@@ -56,7 +56,7 @@ function getSeconds() {
 }
 
 //getYYYYMMDD
-function getYyyyMmDd() {
+function yyyyMMdd() {
 	const date = new CurrentDate().instance();
 	
 	const yyyy = date.year;
@@ -67,7 +67,7 @@ function getYyyyMmDd() {
 }
 
 //getHHMMSS
-function getHhMMss() {
+function HHmmss() {
 	const date = new CurrentDate().instance();
 	
 	const hh = date.hours < 10 ? `0${date.hours}` : date.hours;
@@ -77,8 +77,8 @@ function getHhMMss() {
 	return `${hh}:${mm}:${ss}`;
 }
 
-//getHHMMSS
-function getHhMM() {
+//getHHMM
+function HHmm() {
 	const date = new CurrentDate().instance();
 	
 	const hh = date.hours < 10 ? `0${date.hours}` : date.hours;
@@ -87,9 +87,24 @@ function getHhMM() {
 	return `${hh}:${mm}`;
 }
 
+//getYYYYMMDDHHmmss
+function yyyyMMddHHmmss(baseDate) {
+	const dateFmt = new Date(baseDate);
+	
+	const yyyy = dateFmt.getFullYear();
+	const MM = (dateFmt.getMonth() + 1) < 10 ? `0${dateFmt.getMonth() + 1}` : (dateFmt.getMonth() + 1);
+	const dd = dateFmt.getDate() < 10 ? `0${dateFmt.getDate()}` : dateFmt.getDate();
+	
+	const hh = dateFmt.getHours() < 10 ? `0${dateFmt.getHours()}` : dateFmt.getHours();
+	const mm = dateFmt.getMinutes() < 10 ? `0${dateFmt.getMinutes()}` : dateFmt.getMinutes();
+	const ss = dateFmt.getSeconds() < 10 ? `0${dateFmt.getSeconds()}` : dateFmt.getSeconds();
+	
+	return `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;
+}
+
 //getCurrentTime
 function getCurrentTime() {
-	return `${getYyyyMmDd()} ${getHhMMss()}`;
+	return `${yyyyMMdd()} ${HHmmss()}`;
 }
 
 //first day of this month
@@ -135,19 +150,5 @@ function getLastMonthLastDay() {
 	dd = dd < 10 ? `0${dd}` : dd;
 	
 	return `${yyyy}-${mm}-${dd}`;
-}
-
-function getYyyyMmDdHhMmSs(baseDate) {
-	const dateFmt = new Date(baseDate);
-	
-	const yyyy = dateFmt.getFullYear();
-	const MM = (dateFmt.getMonth() + 1) < 10 ? `0${dateFmt.getMonth() + 1}` : (dateFmt.getMonth() + 1);
-	const dd = dateFmt.getDate() < 10 ? `0${dateFmt.getDate()}` : dateFmt.getDate();
-	
-	const hh = dateFmt.getHours() < 10 ? `0${dateFmt.getHours()}` : dateFmt.getHours();
-	const mm = dateFmt.getMinutes() < 10 ? `0${dateFmt.getMinutes()}` : dateFmt.getMinutes();
-	const ss = dateFmt.getSeconds() < 10 ? `0${dateFmt.getSeconds()}` : dateFmt.getSeconds();
-	
-	return `${yyyy}-${MM}-${dd} ${hh}:${mm}:${ss}`;
 }
 ```
