@@ -52,6 +52,7 @@ function selectedOption(event)(e){
 ```css
 .modal {
 	display: none;
+	z-index: 9999;
 }
 
 .modal.is_visible {
@@ -89,7 +90,6 @@ function selectedOption(event)(e){
 	border:1px solid #cccccc;
 	margin:0;
 	padding:25px;
-	z-index:500;
 }
 
 /** fade effect **/
