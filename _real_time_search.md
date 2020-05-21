@@ -6,6 +6,7 @@
 ```css
 .real_time_search {
 	display: none;
+	box-shadow: 1px 1px 5px grey;
 }
 .show {
 	display: block;
