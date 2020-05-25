@@ -151,4 +151,15 @@ function getLastMonthLastDay() {
 	
 	return `${yyyy}-${mm}-${dd}`;
 }
+
+// 30 minutes ago from now
+function get30minutesAgo() {
+	const date = new Date();
+	date.setMinutes(date.getMinutes() - 30);
+	
+	const hh = (date.getHours() < 10) ? `0${date.getHours()}` : date.getHours();
+	const mm = (date.getMinutes() < 10) ? `0${date.date.getMinutes()}` : date.getMinutes();
+	
+	return `${yyyyMMdd()} ${hh}:${mm}`;
+}
 ```
