@@ -8,7 +8,7 @@ window.onload = function(){
 ###### DOMContentLoaded
 ```js
 window.addEventListener("DOMContentLoaded", function() {
-  faster then window.onload 
+  // faster then window.onload 
 });
 ```
   
