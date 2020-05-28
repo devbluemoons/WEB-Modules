@@ -196,7 +196,7 @@ function xmlHttpRequest(type, url, data){
 
 ###### fetch
 ```js
-function search() {
+function findData() {
 	
 	/* !!주의 : form 데이터를 넘길때  get 메소드를 사용하면 typeError가 발생한다
 	404 같은 bad request 의 경우, catch() 에서 처리되는 거 아닌가? 라고 생각 하실 수 있겠지만 
