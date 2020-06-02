@@ -4,7 +4,7 @@
 ```
 
 ```js
-function onlyOneChecked(e){
+function onlyOneChecked(e) {
 	
 	const status = e.target.checked;
 	
@@ -26,7 +26,7 @@ function onlyOneChecked(e){
 ```
   
 ```js
-function selectedOption(event)(e){
+function selectedOption(e) {
 	console.log(e.target.value);
 }
 ```
