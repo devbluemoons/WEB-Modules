@@ -613,7 +613,7 @@ function selectRow(e) {
 //setItem
 localStorage.setItem('myCat', 'Tom');
 //getItem
-var cat = localStorage.getItem('myCat');
+const cat = localStorage.getItem('myCat');
 //removeItem
 localStorage.removeItem('myCat');
 //clear (all items)
