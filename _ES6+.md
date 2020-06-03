@@ -83,3 +83,10 @@ const copyInnerObj = {
   },
 };
 ```
+  
+###### inside function of array / [].includes(param)
+```js
+const numbers = [1,2,3,4,5];
+numbers.includes(1); //true
+numbers.includes(7); //false
+```
