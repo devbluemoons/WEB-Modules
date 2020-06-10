@@ -4,7 +4,7 @@
 ```js
 function autocompleteUserId() {
 	
-	const cookieName = "userId";
+	const cookieName = "something";
 	const value = `; ${document.cookie}`;
 	const parts = value.split(`; ${cookieName}=`);
 	
@@ -23,4 +23,10 @@ function autocompleteUserId() {
 [Ref.] https://stackoverflow.com/questions/10730362/get-cookie-by-name  
 
 ###### delete cookie  
-  
+```js
+function deleteCookie() {
+	const cookieName = "something";
+	const expireDate = "Thu, 01 Jan 1970 00:00:00 GMT";
+	document.cookie = `${cookieName}=; expires=${expireDate};`;
+}
+```
