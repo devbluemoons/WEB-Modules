@@ -24,8 +24,8 @@ function autocompleteUserId() {
 	
 	if (parts.length > 1) {
 		/* ### Note ### */
-		// array.pop() return last of index and then remove on original array
-		// array.shift(); return first of index and then remove on orginal array
+		// array.pop() return "last element of index" and then remove on original array object
+		// array.shift() return "first element of index" and then remove on original array object
 		
 		document.querySelector("input[name=userId]").value = parts.pop().split(";").shift();
 		document.querySelector("input[name=remember]").checked = true;
