@@ -1,10 +1,24 @@
 ###### set cookie
+```js
+function setCookie() {
+		
+	const cookieName = "userId";
+	const userId = document.querySelector("input[name=userId]").value;
+
+	const expireDate = new Date();
+	expireDate.setDate(expireDate.getDate() + 7); // cookie에 [userId] 7일동안 보관
+	const expires = expireDate.toGMTString();
+
+	const cookieValue = `${escape(userId)}; expires=${expireDate.toGMTString()};`;
+	document.cookie = `${cookieName}=${cookieValue};`;
+}
+```
   
 ###### get cookie  
 ```js
 function autocompleteUserId() {
 	
-	const cookieName = "something";
+	const cookieName = "userId";
 	const value = `; ${document.cookie}`;
 	const parts = value.split(`; ${cookieName}=`);
 	
