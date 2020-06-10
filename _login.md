@@ -6,7 +6,7 @@ function sessionInvalidTimer() {
 	setTimeout(() => {
 		alert("This session is expired.\nIt will move login page.");
 		location.href = "/logout";
-	}, 1000*60)
+	}, 1000*60);
 }
 function resetTimer() {
 	let timer = null;
