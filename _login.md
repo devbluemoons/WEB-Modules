@@ -8,7 +8,6 @@ function sessionInvalidTimer() {
 		location.href = "/logout";
 	}, 1000*60)
 }
-
 function resetTimer() {
 	let timer = null;
 	return () => {
@@ -16,6 +15,5 @@ function resetTimer() {
 		timer = sessionInvalidTimer();
 	}
 }
-
 document.addEventListener("click", resetTimer);
 ```
