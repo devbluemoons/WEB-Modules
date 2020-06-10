@@ -8,7 +8,7 @@ function autocompleteUserId() {
 	const value = `; ${document.cookie}`;
 	const parts = value.split(`; ${cookieName}=`);
 	
-	if (parts.length === 3) {
+	if (parts.length === 2) {
 		document.querySelector("input[name=userId]").value = parts.pop().split(';').shift();
 		document.querySelector("input[name=remember]").checked = true;
 	}
