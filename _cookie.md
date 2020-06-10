@@ -18,8 +18,8 @@ function autocompleteUserId() {
 	}
 }
 ```
-[Ref.] https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
-[Ref.] https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
+[Ref.] https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop  
+[Ref.] https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift  
 [Ref.] https://stackoverflow.com/questions/10730362/get-cookie-by-name  
 
 ###### delete cookie  
