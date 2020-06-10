@@ -4,3 +4,13 @@
 ```html
 <form autocomplete="off"></form>
 ```
+  
+###### checkbox
+```html
+<input type="checkbox" id="remember" name="remember"><label for="remember"><span></span>Remember ID</label>
+```
+```js
+document.querySelector("input[name=remember]").addEventListener("click", e => {
+	console.log(e.target.checked);
+});
+```
