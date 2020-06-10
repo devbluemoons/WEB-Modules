@@ -9,7 +9,7 @@ function autocompleteUserId() {
 	const parts = value.split(`; ${cookieName}=`);
 	
 	if (parts.length > 1) {
-		/* Note */
+		/* ### Note ### */
 		// array.pop() return last of index and then remove on original array
 		// array.shift(); return first of index and then remove on orginal array
 		
