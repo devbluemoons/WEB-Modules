@@ -3,7 +3,7 @@
 ```js
 // session invalid listener
 function sessionInvalidTimer() {
-	setTimeout(function() {
+	setTimeout(() => {
 		alert("This session is expired.\nIt will move login page.");
 		location.href = "/logout";
 	}, 1000*60)
