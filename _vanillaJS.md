@@ -33,7 +33,7 @@ function selectedOption(e) {
   
 ###### modal control 
 ```html
-<div class="modal">
+<div class="_modal">
 	<div class="modal_overlay"></div>
 	<div class="modal_content">
 		<div class="close_icon">X</div>
@@ -50,12 +50,11 @@ function selectedOption(e) {
 ```
   
 ```css
-.modal {
+[class^="_modal"] {
 	display: none;
 	z-index: 9999;
 }
-
-.modal.is_visible {
+.is_visible {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -65,13 +64,13 @@ function selectedOption(e) {
 	justify-content: center;
 	align-items: center;
 }
-.modal_overlay {
+[class^="modal_overlay"] {
 	background-color: rgba(0, 0, 0, 0.7);
 	width: 100%;
 	height: 100%;
 	position: absolute;
 }
-.close_icon {
+[class^="close_icon"] {
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -85,11 +84,26 @@ function selectedOption(e) {
 	background: white;
 	padding:0;
 	position: absolute;
-	width:900px;
-	height:600px;
-	border:1px solid #cccccc;
-	margin:0;
-	padding:25px;
+	width: 900px;
+	height: 630px;
+	border: 1px solid #cccccc;
+	margin: 0;
+	padding: 25px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.modal_content_sm {
+	background: white;
+	padding:0;
+	position: absolute;
+	width: 540px;
+	height: 320px;
+	border: 1px solid #cccccc;
+	margin: 0;
+	padding: 25px;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 /** fade effect **/
@@ -120,6 +134,11 @@ function selectedOption(e) {
 	-webkit-animation: fade-out 700ms;
 	animation        : fade-out 700ms;
 }
+
+.wrapper {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
 ```
   
 ```js
@@ -142,7 +161,7 @@ function bindingModal() {
 }
 
 function openModal() {
-	const modal = document.querySelector(".modal");
+	const modal = document.querySelector("._modal");
 	
 	modal.classList.remove("fadeOut");
 	modal.classList.add("is_visible", "fadeIn");
@@ -159,7 +178,7 @@ function openModal() {
 // 7) 세번째 parameter로 {once:true} 를 object 형태로 적용
 // 8) 세번째 parameter로 인하여 EventListener는 한번만 실행된다
 function closeModal() {
-	const modal = document.querySelector(".modal");
+	const modal = document.querySelector("._modal");
 	
 	modal.classList.add("fadeOut");
 	modal.addEventListener("animationend", () => {
