@@ -649,3 +649,18 @@ function checkedCount(e) {
 	}
 }
 ```
+  
+###### Element setAttribute / removeAttribute
+```js
+function changeQueryOption(e) {
+	
+	const currentValue = e.target.value;
+	const currentRow = e.target.parentElement.id;
+	
+	if(currentValue === "BETWEEN") {
+		document.querySelector(`tbody input[name=${currentRow}]`).removeAttribute("disabled");
+	}else {
+		document.querySelector(`tbody input[name=${currentRow}]`).setAttribute("disabled", true);
+	}
+}
+```
