@@ -660,6 +660,7 @@ function changeQueryOption(e) {
 	if(currentValue === "BETWEEN") {
 		document.querySelector(`tbody input[name=${currentRow}]`).removeAttribute("disabled");
 	}else {
+		document.querySelector(`tbody input[name=${currentRow}]`).value = "";
 		document.querySelector(`tbody input[name=${currentRow}]`).setAttribute("disabled", true);
 	}
 }
