@@ -25,3 +25,18 @@ function howToUse(data) {
 	});
 }
 ```
+```java
+@PostMapping("/registerDiRule")
+@ResponseBody public String registerDiRule(@RequestParam Map<String, Object> param) throws Exception {
+	try {
+		service.registerDiRule(param);
+	} catch (Exception e) {
+		return e.getMessage();
+	}
+	return "";
+}
+
+// [INSERT] process에서 return 타입이 void가 아닌 string은 이유는 
+// fetch 에서 response를 결과로 return 받아야 하기 때문이다
+// 실제로 return 받아야 할 data는 없지만 @ResponseBody를 선언함으로 [처리상태]를 [response]로 받는다 
+```
