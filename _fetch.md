@@ -14,12 +14,12 @@ function howToUse(data) {
 		if(!response.ok){
 			throw Error(response.status);
 		}
-    // return response.json();
-    // return response.text();
+    		// return response.json();
+    		// return response.text();
 	}).then(data => {
 		if(data) {
-      console.log(data);
-    }
+      			console.log(data);
+    		}
 	}).catch(error => {
 		console.log("Error:",error);
 	});
