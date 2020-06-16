@@ -53,3 +53,4 @@ function findData() {
   await findData(); /*2*/
 })();
 ```
+[Ref.] https://stackoverflow.com/questions/56348062/insert-in-for-each-with-async-await/56348449#56348449
