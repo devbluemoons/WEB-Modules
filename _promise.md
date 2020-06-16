@@ -50,7 +50,7 @@ function findData() {
   for(const item of dataArr) {
     await insertData(item); /*1*/
   }
-  await findData(); /*2*/
+  findData(); /*2*/
 })();
 ```
 [Ref.] https://stackoverflow.com/questions/56348062/insert-in-for-each-with-async-await/56348449#56348449
