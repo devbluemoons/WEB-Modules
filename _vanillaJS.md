@@ -645,7 +645,7 @@ function checkedCount(e) {
 	const checkedElArr = document.querySelectorAll("tbody input[type=checkbox]:checked");
 	if(checkedElArr.length > 3) {
 		alert("로그필드 조건은 최대 3개까지 선택가능합니다. ");
-		checkedElArr[checkedElArr.length-1].checked = false;
+		e.target.checked = false;
 	}
 }
 ```
