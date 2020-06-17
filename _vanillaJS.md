@@ -665,3 +665,8 @@ function changeQueryOption(e) {
 	}
 }
 ```
+###### how to find text in div tag
+```js
+const divArr = Array.from(document.querySelectorAll("div"));
+const element = divArr.find(el => el.textContent === "text-keyword");
+```
