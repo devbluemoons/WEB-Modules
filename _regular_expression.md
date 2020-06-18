@@ -10,7 +10,7 @@ e.target.value = e.target.value.replace(/^[^0-9]/g,"");
 ###### IP address form
 ```js
 function ipRegExp(e) {
-	e.target.value = e.target.value.replace(/[^0-9|.]/g, ""); // check number and dot
+	e.target.value = e.target.value.replace(/[^0-9.]/g, ""); // check number and dot
 	e.target.value = e.target.value.replace(/(\.\.)/gi, "."); // check double dot
 	e.target.value = e.target.value.replace(/^[^0-9]/g, "");  // check first value is number
 	e.target.value = e.target.value.replace(/(\d{3})\d{1}/, "$1"); // limit character length 3 before dot
@@ -19,7 +19,7 @@ function ipRegExp(e) {
 ###### LATITUDE / LONGITUDE form
 ```js
 function floatRegExp(e) {
-	e.target.value = e.target.value.replace(/[^0-9|.]/g, ""); // check number and dot
+	e.target.value = e.target.value.replace(/[^0-9.]/g, ""); // check number and dot
 	e.target.value = e.target.value.replace(/(\.\.)/gi, "."); // check double dot
 	e.target.value = e.target.value.replace(/^[^0-9]/g, "");  // check first value is number
 	e.target.value = e.target.value.replace(/(\d{3})\d{1}/, "$1"); // limit character length 3 before dot
