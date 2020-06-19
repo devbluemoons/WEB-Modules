@@ -670,3 +670,15 @@ function changeQueryOption(e) {
 const divArr = Array.from(document.querySelectorAll("div"));
 const element = divArr.find(el => el.textContent === "text-keyword");
 ```
+###### toUpperCase() / toLowerCase()
+```js
+function engToUpperCaseRegExp(e) {
+	e.target.value = e.target.value.replace(/[^a-zA-Z]/gi,""); // check English
+	e.target.value = e.target.value.toUpperCase(); // to upper case
+}
+
+function engToLowerCaseRegExp(e) {
+	e.target.value = e.target.value.replace(/[^a-zA-Z]/gi,""); // check English
+	e.target.value = e.target.value.toLowerCase(); // to upper case
+}
+```
