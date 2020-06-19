@@ -679,6 +679,6 @@ function engToUpperCaseRegExp(e) {
 
 function engToLowerCaseRegExp(e) {
 	e.target.value = e.target.value.replace(/[^a-zA-Z]/gi,""); // check English
-	e.target.value = e.target.value.toLowerCase(); // to upper case
+	e.target.value = e.target.value.toLowerCase(); // to lower case
 }
 ```
