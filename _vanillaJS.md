@@ -255,6 +255,7 @@ formData.append("key", value);
 const seq = formData.get("SEQ").trim();
 formData.delete("SEQ");
 formData.has("SEQ");
+formData.set("FORMAT_ID", "GENERAL");
 
 const formData = new FormData(document.getElementById("searchForm"));
 ```
