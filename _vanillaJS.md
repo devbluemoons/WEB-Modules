@@ -683,3 +683,12 @@ function engToLowerCaseRegExp(e) {
 	e.target.value = e.target.value.toLowerCase(); // to lower case
 }
 ```
+###### onkeyup / onkeydown
+```js
+function numRegExp(e) {
+	e.target.value = e.target.value.replace(/[^0-9]/g, ""); // check only integer
+}
+```
+```html
+<input type="text" onkeyup="numRegExp(event)" onkeydown="numRegExp(event)"/>
+```
