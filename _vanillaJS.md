@@ -731,6 +731,7 @@ function findData() {
 		}
 	}).catch(error => {
 		console.log("Error:",error);
+		document.getElementById("loading").classList.remove("loading");
 	});
 }
 ```
