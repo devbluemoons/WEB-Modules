@@ -692,3 +692,45 @@ function numRegExp(e) {
 ```html
 <input type="text" onkeyup="numRegExp(event)" onkeydown="numRegExp(event)" onfocusout="numRegExp(event)"/>
 ```
+###### async loading image
+```css
+.loading {
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	border:0;
+	position:absolute;
+	margin:0;
+	padding:0;
+	background-image: url(../images/loading.gif);
+	background-repeat:no-repeat;
+	background-position: center center;
+	z-index:9999;
+}
+```
+```html
+<div id="loading"></div>
+```
+```js
+function findData() {
+	
+	document.getElementById("loading").classList.add("loading");
+	
+	return fetch("/test/findData", {
+		method: "GET",
+	}).then(response => {
+		if(!response.ok){
+			throw Error(response.status);
+		}
+		return response.text();
+	}).then(data => {
+		if(data) {
+			document.getElementById("tableContents").innerHTML = data;
+			document.getElementById("loading").classList.remove("loading");
+		}
+	}).catch(error => {
+		console.log("Error:",error);
+	});
+}
+```
