@@ -48,6 +48,10 @@ function focusTarget(e) {
 		}
 	}
 }
+
+window.addEventListener('error', err => {
+    document.getElementById("pageLoading").stype.display = "none";
+});
 ```
   
 - 이벤트리스너를 추가하고 제거하는 시점을 명확하게 정하는 것이 좋다
