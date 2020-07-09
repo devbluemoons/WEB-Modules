@@ -12,3 +12,8 @@ console.log(typeof sample);
 sample = sample.toString();
 console.log(typeof sample);
 ```
+###### number Formatter
+```js
+let sample = 1234567890;
+console.log(new Intl.NumberFormat().format(sample));
+```
