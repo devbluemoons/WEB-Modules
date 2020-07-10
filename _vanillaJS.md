@@ -264,8 +264,8 @@ const formData = new FormData(document.getElementById("searchForm"));
 ```js
 document.getElementById("myForm").reset();
 ```
-[Warning.] https://stackoverflow.com/questions/20285970/form-resetting-is-not-working  
-[Hidden value reset] https://stackoverflow.com/questions/2559616/javascript-true-form-reset-for-hidden-fields  
+[warning.] https://stackoverflow.com/questions/20285970/form-resetting-is-not-working  
+[reset hidden value] https://stackoverflow.com/questions/2559616/javascript-true-form-reset-for-hidden-fields  
     
 ###### search formData's key / value
 ```js
