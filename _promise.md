@@ -1,5 +1,11 @@
-## promise
-  
+###### promise
+```js
+new Promise((resolve, reject) => {
+	const status = 200;	
+	    resolve(status);
+	});
+}).then(result => result === 200 ? console.log("status is 200!"); : null);
+```  
 ###### async
 ```js
 // 함수 앞에 붙여서 사용
