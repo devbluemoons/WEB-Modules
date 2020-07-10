@@ -264,6 +264,7 @@ const formData = new FormData(document.getElementById("searchForm"));
 ```js
 document.getElementById("myForm").reset();
 ```
+[Warning.] https://stackoverflow.com/questions/20285970/form-resetting-is-not-working
   
 ###### search formData's key / value
 ```js
