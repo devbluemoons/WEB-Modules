@@ -64,3 +64,14 @@ https://stackoverflow.com/questions/10552838/whats-the-purpose-of-a-leading-colo
 ###### Object.prototype Issue
 - When Object.prototype is used, there is a problem in jQuery  
 [Ref.] https://stackoverflow.com/questions/33063382/jquery-error-matchexprtype-exec-is-not-a-function/33063383
+  
+###### not realonly selector
+```js
+// input clear except readonly attribute
+$('input:text:not([readonly])').addClear({
+top : -2,
+right : 6
+});
+```
+[Ref.] https://stackoverflow.com/questions/3708764/jquery-not-readonly-selector
+  
