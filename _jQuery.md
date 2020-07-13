@@ -69,8 +69,8 @@ https://stackoverflow.com/questions/10552838/whats-the-purpose-of-a-leading-colo
 ```js
 // input clear except readonly attribute
 $('input:text:not([readonly])').addClear({
-top : -2,
-right : 6
+    top : -2,
+    right : 6
 });
 ```
 [Ref.] https://stackoverflow.com/questions/3708764/jquery-not-readonly-selector
