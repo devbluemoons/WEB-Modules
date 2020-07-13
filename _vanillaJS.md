@@ -737,3 +737,10 @@ function findData() {
 	});
 }
 ```
+  
+###### new URL([string])
+```js
+const urlInfo = new URL(document.URL);
+const something = urlInfo.searchParams.get("something");
+console.log(something);
+```
