@@ -18,11 +18,11 @@ let sample = 1234567890;
 console.log(new Intl.NumberFormat().format(sample));
 ```
 
-###### convert boolean to string
+###### cast boolean to string
 ```js
-let toggle = true;
-console.log(typeof toggle);
+let value = true;
+console.log(typeof value);
 
-toggle = Boolean(toggle).toString();
-console.log(typeof toggle);
+toggle = value.toString();
+console.log(typeof value);
 ```
