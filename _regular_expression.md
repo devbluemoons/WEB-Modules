@@ -61,9 +61,10 @@ function removeWhiteSpaceRegExp(e) {
 }
 ```
   
-###### currency via
+###### currency
 ```js
-function currencyViaRegExr(e) {
+function currencyRegExr(e) {
+    e.target.value = e.target.value.replace(/^0/, "");
     e.target.value = e.target.value.replace(/[^0-9|]/g, "");
     e.target.value = e.target.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
