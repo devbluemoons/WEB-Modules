@@ -17,3 +17,12 @@ console.log(typeof sample);
 let sample = 1234567890;
 console.log(new Intl.NumberFormat().format(sample));
 ```
+
+###### convert boolean to string
+```js
+let toggle = true;
+console.log(typeof toggle);
+
+toggle = Boolean(toggle).toString();
+console.log(typeof toggle);
+```
