@@ -64,8 +64,8 @@ function removeWhiteSpaceRegExp(e) {
 ###### currency
 ```js
 function currencyRegExr(e) {
-    e.target.value = e.target.value.replace(/^0/, "");
-    e.target.value = e.target.value.replace(/[^0-9|]/g, "");
-    e.target.value = e.target.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+	e.target.value = e.target.value.replace(/^0/, "");
+	e.target.value = e.target.value.replace(/[^0-9|]/g, "");
+	e.target.value = e.target.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
 ```
