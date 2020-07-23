@@ -73,5 +73,11 @@ $('input:text:not([readonly])').addClear({
     right : 6
 });
 ```
+###### decodeRUIComponent
+```js
+const formData = decodeURIComponent($('#form').serialize()).replace(/,/gi,"");
+console.log(formData);
+```  
+  
 [Ref.] https://stackoverflow.com/questions/3708764/jquery-not-readonly-selector
   
