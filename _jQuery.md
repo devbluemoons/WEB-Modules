@@ -72,12 +72,13 @@ $('input:text:not([readonly])').addClear({
     top : -2,
     right : 6
 });
-```
+```  
+[Ref.] https://stackoverflow.com/questions/3708764/jquery-not-readonly-selector  
+  
 ###### decodeRUIComponent
 ```js
 const formData = decodeURIComponent($('#form').serialize()).replace(/,/gi,"");
 console.log(formData);
 ```  
-  
-[Ref.] https://stackoverflow.com/questions/3708764/jquery-not-readonly-selector
+[Ref.] https://stackoverflow.com/questions/5632923/decoding-with-jquery-serialize    
   
