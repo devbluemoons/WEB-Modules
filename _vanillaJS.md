@@ -744,3 +744,12 @@ const urlInfo = new URL(document.URL);
 const something = urlInfo.searchParams.get("something");
 console.log(something);
 ```
+  
+###### select tag readonly effect (remove option tag)
+```js
+[].forEach.call(  document.querySelectorAll("#memberLevel option")  , e => {
+	if (e.text.search(result.title) === -1) {
+		e.remove();
+	};
+});
+```
