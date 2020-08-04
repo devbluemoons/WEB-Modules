@@ -83,3 +83,8 @@ console.log(formData);
 ```  
 [Ref.] https://stackoverflow.com/questions/5632923/decoding-with-jquery-serialize    
   
+###### how to get select option label
+```js
+$('#selecter :selected').attr('label'); 
+```
+[Ref.] https://stackoverflow.com/questions/2175737/how-to-get-label-of-select-option-with-jquery
