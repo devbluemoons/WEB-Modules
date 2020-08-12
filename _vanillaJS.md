@@ -753,3 +753,9 @@ console.log(something);
 	};
 });
 ```
+  
+###### remove css property
+```js
+element.style.overflow = "auto";
+element.style.removeProperty("overflow);
+```
