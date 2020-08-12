@@ -69,3 +69,7 @@ function currencyRegExr(e) {
 	e.target.value = e.target.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
 ```
+  
+###### email
+[Ref.] https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript  
+  
