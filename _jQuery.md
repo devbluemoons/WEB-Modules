@@ -87,4 +87,9 @@ console.log(formData);
 ```js
 $('#selecter :selected').attr('label'); 
 ```
-[Ref.] https://stackoverflow.com/questions/2175737/how-to-get-label-of-select-option-with-jquery
+[Ref.] https://stackoverflow.com/questions/2175737/how-to-get-label-of-select-option-with-jquery  
+  
+###### clear all of select option
+```js
+$("#selectBox").find("option").remove();
+```
