@@ -759,3 +759,9 @@ console.log(something);
 element.style.overflow = "auto";
 element.style.removeProperty("overflow);
 ```
+###### new Option()
+```js
+new Option(element,key);
+```
+[Ref.] https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option  
+  
