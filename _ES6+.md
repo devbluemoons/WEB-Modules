@@ -90,3 +90,9 @@ const numbers = [1,2,3,4,5];
 numbers.includes(1); //true
 numbers.includes(7); //false
 ```
+
+###### spread operator with querySelectorAll
+```js
+[...document.querySelectorAll('div')].map(x => console.log(x.innerHTML))
+```
+[Ref.] https://stackoverflow.com/questions/2600343/why-does-document-queryselectorall-return-a-staticnodelist-rather-than-a-real-ar
