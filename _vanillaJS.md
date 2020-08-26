@@ -766,3 +766,31 @@ new Option(element,key);
 ```
 [Ref.] https://developer.mozilla.org/en-US/docs/Web/API/HTMLOptionElement/Option  
   
+###### spread object operator
+```js
+const obj = {
+	aaa : 111,
+	bbb : 222,
+	ccc : 333
+}
+
+function changeParameter(param) {
+	
+	if (!param) {
+		return false;
+	}
+	
+	if (param.aaa) {
+		param.aaa = 100;
+	}
+	if (param.bbb) {
+		param.bbb = 200;
+	}
+	if (param.ccc) {
+		param.ccc = 300;
+	}
+}
+
+changeParameter(obj);		// { aaa : 100, bbb : 200, ccc : 300 }
+changeParameter({...obj});	// { aaa : 111, bbb : 222, ccc : 333 }
+```
