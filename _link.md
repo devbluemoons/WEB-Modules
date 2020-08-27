@@ -9,4 +9,6 @@
 ```html
 <a onclick="link(e)">Link</a>
 ```
-- when mouseover on a tag, there is nothing any effect
+- when mouseover on a tag, there is nothing any effect  
+  
+[Ref.] https://stackoverflow.com/questions/47617271/remove-url-when-hover-over-a-possible
