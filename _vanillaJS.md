@@ -795,3 +795,10 @@ function changeParameter(param) {
 changeParameter(obj);		// { aaa : 100, bbb : 200, ccc : 300 }
 changeParameter({...obj});	// { aaa : 111, bbb : 222, ccc : 333 }
 ```
+###### stopPropagation()
+```js
+// dropdown-menu 창이 닫히는 것을 막는다
+document.querySelectorAll("#walletLabelList span").forEach(item => {
+	item.addEventListener("click", e => e.stopPropagation());
+});
+```
