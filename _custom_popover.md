@@ -85,14 +85,14 @@ function editLabel(e) {
 	const popoverContent = document.querySelector(".edit-popover-content");
 	
 	popoverContent.innerHTML = `<div class="form-group zeroMargin">
-									<div class="input-group">
-										<input type="text" class="form-control" name="labelTitle" placeholder="라벨명" autocomplete="off">
-										<span class="input-group-btn">
-											<button type="button" class="btn btn-primary" name="editBtn">수정</button>
-											<button type="button" class="btn btn-default" name="cancelBtn">취소</button>
-										</span>
-									</div>
-								</div>`;
+		<div class="input-group">
+			<input type="text" class="form-control" name="labelTitle" placeholder="라벨명" autocomplete="off">
+			<span class="input-group-btn">
+				<button type="button" class="btn btn-primary" name="editBtn">수정</button>
+				<button type="button" class="btn btn-default" name="cancelBtn">취소</button>
+			</span>
+		</div>
+	</div>`;
 	
 	const editBtn = document.querySelector("[name=editBtn]");
 	const cancelBtn = document.querySelector("[name=cancelBtn]");
