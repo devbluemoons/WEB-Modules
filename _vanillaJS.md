@@ -444,6 +444,7 @@ document.querySelector("input[name=PHONE]").addEventListener("keyup", function(e
 ```js
 const li = document.createElement("li");
 li.textContent = "abc123";
+li.innerHTML = "<span>You must use this attribute when insert HTML tag</span>"
 ```
   
 ###### real time search using input and div tag
