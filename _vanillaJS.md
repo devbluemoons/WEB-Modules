@@ -802,3 +802,7 @@ document.querySelectorAll("#walletLabelList span").forEach(item => {
 	item.addEventListener("click", e => e.stopPropagation());
 });
 ```
+###### number type length
+```js
+console.log(e.target.value.length);
+```
