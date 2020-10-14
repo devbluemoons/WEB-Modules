@@ -810,6 +810,6 @@ console.log(e.target.value.length);
 ```
 ###### `:last-child` selector
 ```js
-// last-child of span tag
+// last span tag in Element
 memberIdxLabels.querySelector("span:last-child").innerHTML = lastLabel;
 ```
