@@ -808,3 +808,15 @@ document.querySelectorAll("#walletLabelList span").forEach(item => {
 ```js
 console.log(e.target.value.length);
 ```
+###### `:last-child` selector
+```js
+p:last-child {
+  color: lime;
+}
+div > span:last-child {
+  color: lime;
+}
+#myContainer span:last-child {
+  color: lime;
+}
+```
