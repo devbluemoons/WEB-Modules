@@ -73,3 +73,44 @@ function currencyRegExr(e) {
 ###### email
 [Ref.] https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript  
   
+###### input variable to pattern
+```js
+function makeParams(query) {
+    const searchCondition = {};
+    const pagingCondition = {};
+
+    // set only search parameter
+    if (query.name) {
+        searchCondition.name = new RegExp(query.name, "i");
+    }
+    if (query.address) {
+        searchCondition.address1 = new RegExp(query.address, "i");
+    }
+    if (query.gender) {
+        searchCondition.gender = new RegExp(query.gender, "i");
+    }
+    if (query.generation) {
+        searchCondition.generation = new RegExp(query.generation, "i");
+    }
+    if (query.married) {
+        searchCondition.married = new RegExp(query.married, "i");
+    }
+    if (query.faithState) {
+        searchCondition.faithState = new RegExp(query.faithState, "i");
+    }
+
+    // set only paging parameter
+    if (query.skip) {
+        pagingCondition.skip = Number((query.page - 1) * query.limit);
+    }
+    if (query.limit) {
+        pagingCondition.limit = Number(query.limit);
+    }
+
+    return {
+        searchCondition,
+        pagingCondition,
+    };
+}
+```
+  
