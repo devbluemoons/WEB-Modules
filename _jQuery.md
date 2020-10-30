@@ -93,3 +93,7 @@ $('#selecter :selected').attr('label');
 ```js
 $("#selectBox").find("option").remove();
 ```
+  
+###### type="text/x-tmpl"
+[Ref.] https://github.com/BorisMoore/jquery-tmpl  
+
