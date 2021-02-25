@@ -24,6 +24,9 @@ export function[function-name](){} /* or */ const [variable-name]
 export function currentTime(){}
 export const date = (...);
 export let abc = (...)
+
+// 함수를 내보낼 순 없다, 모듈 또는 컴포넌트만 가능
+default export [only module]
 ```
   
 ###### check variable
