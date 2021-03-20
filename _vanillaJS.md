@@ -813,3 +813,12 @@ console.log(e.target.value.length);
 // last span tag in Element
 memberIdxLabels.querySelector("span:last-child").innerHTML = lastLabel;
 ```
+  
+###### convert snake case to camel case
+```js
+function snakeToCamel(str) {
+	return str.replace(/([-_]\w)/g, g => g[1].toUpperCase());
+}
+
+export default snakeToCamel;
+```
