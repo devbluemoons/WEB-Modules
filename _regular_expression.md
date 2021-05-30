@@ -80,7 +80,8 @@ function currencyInput(value) {
 		.replace(/(\.\.)/, ".") // double dot
 		.replace(/^.{0}$/, "0") // if value length is zero
 		.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"); // insert comma each
-		.replace(/^(\d+.?\d{0,2})\d*$/, "$1"); // limit decimal length 2
+	//	.replace(/^(\d+.?\d{0,2})\d*$/, "$1"); // limit decimal length 2
+		.replace(/\d+\.?\d{3}$/, value.slice(0, -1));
 }
 
 export default currencyInput;
