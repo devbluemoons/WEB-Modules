@@ -69,6 +69,21 @@ function currencyRegExr(e) {
 	e.target.value = e.target.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
 }
 ```
+
+###### currencyInput
+```js
+function currencyInput(value) {
+	return value
+		.replace(/^0/, "") // first value is zero
+		.replace(/^[^0-9]/g, "0.") // first value is not number
+		.replace(/[^0-9.]/g, "")
+		.replace(/(\.\.)/, ".") // double dot
+		.replace(/^.{0}$/, "0") // if value length is zero
+		.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"); // insert comma each 
+}
+
+export default currencyInput;
+```
   
 ###### email
 [Ref.] https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript  
