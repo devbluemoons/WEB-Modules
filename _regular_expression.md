@@ -86,7 +86,7 @@ function comma(value) {
             .replace(/^(\d*\.?)|(\d*)\.?/g, "$1$2")    // [마침표]는 최대 하나만 허용
             .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") // 각 세자리 수 마다 [콤마] 삽입
             .replace(/(\.\d{2})\d{1}/, "$1")           // [소수점]은 최대 두자리로 제한
-        );
+    );
 }
 
 export default comma;
