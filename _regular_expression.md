@@ -70,21 +70,26 @@ function currencyRegExr(e) {
 }
 ```
 
-###### currencyInput
+###### currencyWithDecimal
 ```js
-function currencyInput(value) {
-	return value
-		.replace(/^0/, "") // first value is zero
-		.replace(/^[^0-9]/g, "0.") // first value is not number
-		.replace(/[^0-9.]/g, "")
-		.replace(/(\.\.)/, ".") // double dot
-		.replace(/^.{0}$/, "0") // if value length is zero
-		.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"); // insert comma each
-	//	.replace(/^(\d+.?\d{0,2})\d*$/, "$1"); // limit decimal length 2
-		.replace(/\d+\.?\d{3}$/, value.slice(0, -1));
+/**
+ * @description 숫자 입력시 : 각 세자리 수 마다 콤마와 소수점(두자리) 포맷
+ * @summary 숫자로 표현되는 대부분의 값에 적용
+ */
+function comma(value) {
+    return (
+        // 입력값 : [문자열] 타입으로 변환
+        String(value)
+            .replace(/^00/, "0")                       // 맨 앞자리 입력에서 "0"이 연속으로 입력 되었을 경우 : "0" 하나로 대체
+            .replace(/[^0-9|.]/g, "")                  // [숫자]와 [마침표]만 입력 가능
+            .replace(/^[.]/g, "0.")                    // 맨 앞자리 입력에서 [마침표] 입력시 "0"을 앞자리에 배치
+            .replace(/^(\d*\.?)|(\d*)\.?/g, "$1$2")    // [마침표]는 최대 하나만 허용
+            .replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") // 각 세자리 수 마다 [콤마] 삽입
+            .replace(/(\.\d{2})\d{1}/, "$1")           // [소수점]은 최대 두자리로 제한
+        );
 }
 
-export default currencyInput;
+export default comma;
 ```
   
 ###### email
@@ -96,32 +101,34 @@ function makeParams(query) {
     const searchCondition = {};
     const pagingCondition = {};
 
+    const { name, address, gender, generation, married, faithState, skip, limit} = query;
+
     // set only search parameter
-    if (query.name) {
-        searchCondition.name = new RegExp(query.name, "i");
+    if (name) {
+        searchCondition.name = new RegExp(name, "i");
     }
-    if (query.address) {
-        searchCondition.address1 = new RegExp(query.address, "i");
+    if (address) {
+        searchCondition.address1 = new RegExp(address, "i");
     }
-    if (query.gender) {
-        searchCondition.gender = new RegExp(query.gender, "i");
+    if (gender) {
+        searchCondition.gender = new RegExp(gender, "i");
     }
-    if (query.generation) {
-        searchCondition.generation = new RegExp(query.generation, "i");
+    if (generation) {
+        searchCondition.generation = new RegExp(generation, "i");
     }
-    if (query.married) {
-        searchCondition.married = new RegExp(query.married, "i");
+    if (married) {
+        searchCondition.married = new RegExp(married, "i");
     }
-    if (query.faithState) {
-        searchCondition.faithState = new RegExp(query.faithState, "i");
+    if (faithState) {
+        searchCondition.faithState = new RegExp(faithState, "i");
     }
 
     // set only paging parameter
-    if (query.skip) {
-        pagingCondition.skip = Number((query.page - 1) * query.limit);
+    if (skip) {
+        pagingCondition.skip = Number((page - 1) * query.limit);
     }
-    if (query.limit) {
-        pagingCondition.limit = Number(query.limit);
+    if (limit) {
+        pagingCondition.limit = Number(limit);
     }
 
     return {
