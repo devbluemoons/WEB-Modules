@@ -8,3 +8,10 @@ li.style.cssText = "min-width: 200px; display: flex; justify-content: space-betw
 ```
 [Ref.] https://stackoverflow.com/questions/3968593/how-can-i-set-multiple-css-styles-in-javascript  
   
+###### placeholder vertical-align
+```css
+::placeholder {
+	position: absolute;
+	line-height: ?px;
+}
+```
