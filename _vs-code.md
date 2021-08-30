@@ -1,11 +1,15 @@
-## Terminal `iTerm.app` Theme
+## Terminal 
+
+- apply `iTerm.app`
+- change `Theme`
+
 ```json
 // setting.json
 // Google's material-design-colors
 
 "terminal.external.osxExec": "iTerm.app",
 "terminal.integrated.fontFamily": "MesloLGS NF",
-    "workbench.colorCustomizations": {
+"workbench.colorCustomizations": {
     "terminal.background": "#263137",
     "terminal.foreground": "#eceef0",
     "terminal.ansiBlack": "#435B66",
