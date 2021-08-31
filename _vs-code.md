@@ -7,6 +7,7 @@
 // setting.json
 // Google's material-design-colors
 
+"terminal.integrated.defaultProfile.osx": "zsh",
 "terminal.external.osxExec": "iTerm.app",
 "terminal.integrated.fontFamily": "MesloLGS NF",
 "workbench.colorCustomizations": {
